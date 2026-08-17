@@ -5,31 +5,31 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Plan 3x3">
+<meta name="apple-mobile-web-app-title" content="Panel">
 <meta name="theme-color" content="#FFFFFF">
-<title>Plan 3x3</title>
+<title>Panel personal</title>
 <style>
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-body{margin:0;padding:0 18px 70px;background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{margin:0;padding:0 18px 80px;background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
 .w{max-width:560px;margin:0 auto}
-.hd{border-bottom:1px solid #111;padding:24px 0 14px;margin-bottom:18px}
-.eye{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;margin:0 0 10px}
-.big{font-size:56px;font-weight:800;line-height:.95;letter-spacing:-2px}
+.hd{border-bottom:1px solid #111;padding:22px 0 12px;margin-bottom:14px}
+.eye{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;margin:0 0 8px}
+.big{font-size:50px;font-weight:800;line-height:.95;letter-spacing:-2px}
 .of{font-size:13px;color:#888}
-.tag{display:inline-block;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid #ddd;padding:5px 8px;color:#666;margin:10px 5px 0 0}
+.tag{display:inline-block;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid #ddd;padding:5px 8px;color:#666;margin:9px 5px 0 0}
 .tag.hot{border-color:#111;background:#111;color:#fff}
-.dt{font-size:12px;color:#888;margin-top:10px}
-.nav{display:flex;gap:4px;margin-bottom:18px}
+.dt{font-size:12px;color:#888;margin-top:8px}
+.nav{display:flex;gap:4px;margin-bottom:16px}
 .nav button{flex:1;background:#fff;border:1px solid #ddd;color:#888;font-size:10px;text-transform:uppercase;letter-spacing:.3px;padding:11px 1px;font-family:inherit}
 .nav button.on{border-color:#111;background:#111;color:#fff}
-h2{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;font-weight:600;margin:26px 0 10px}
-.chk{border:2px solid #111;padding:15px;margin-bottom:14px}
+h2{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;font-weight:600;margin:24px 0 10px}
+.chk{border:2px solid #111;padding:15px;margin-bottom:12px}
 .chk .q{font-size:14.5px;margin-bottom:12px;line-height:1.45}
 .chk .btns{display:flex;gap:8px}
 .chk .btns button{flex:1;background:#fff;border:1px solid #ddd;color:#666;font-size:13px;padding:12px;font-family:inherit}
 .chk .btns button.sel{border-color:#111;background:#111;color:#fff;font-weight:700}
 .chk .r{font-size:12.5px;line-height:1.55;margin-top:12px;color:#444}
-.foco{border:2px solid #111;padding:14px 15px;margin-bottom:14px}
+.foco{border:2px solid #111;padding:14px 15px;margin-bottom:12px}
 .foco .t{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:10px}
 .foco ol{margin:0;padding-left:18px}
 .foco li{font-size:13.5px;line-height:1.5;margin-bottom:8px}
@@ -58,8 +58,6 @@ h2{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;font-
 .sc button{flex:1;min-width:0;height:30px;background:#fff;border:1px solid #ddd;color:#999;font-size:11px;padding:0;font-family:inherit}
 .sc button.s{background:#111;border-color:#111;color:#fff;font-weight:700}
 .mas{width:100%;background:#fff;border:1px dashed #ccc;color:#888;font-size:12px;padding:11px;font-family:inherit;margin-bottom:6px}
-.al{border:1px solid #111;padding:12px 13px;margin-bottom:8px;font-size:12.5px;line-height:1.55;background:#111;color:#fff}
-.al b{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
 .rule{border:1px solid #eee;margin-bottom:6px}
 .rule .h{padding:12px 13px;font-size:13px;font-weight:600}
 .rule ul{margin:0;padding:0 13px 13px 30px;font-size:12.5px;color:#666}
@@ -80,24 +78,24 @@ h2{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;font-
 .kpi{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
 .kpi .c{flex:1 1 45%;border:1px solid #eee;padding:14px 13px}
 .kpi .k{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#999;margin-bottom:6px}
-.kpi .n{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1}
+.kpi .n{font-size:28px;font-weight:800;letter-spacing:-1px;line-height:1}
 .kpi .s{font-size:11px;color:#888;margin-top:4px}
 .lect{border-left:3px solid #111;padding:2px 0 2px 13px;margin:10px 0 0}
 .lect p{font-size:13.5px;line-height:1.6;margin:0 0 9px}
 .lect p:last-child{margin-bottom:0}
-.bars{display:flex;align-items:flex-end;gap:4px;height:90px;border-bottom:1px solid #111;margin-bottom:6px}
+.bars{display:flex;align-items:flex-end;gap:4px;height:80px;border-bottom:1px solid #111;margin-bottom:6px}
 .bars .b{flex:1;background:#111;min-height:1px}
 .bars .b.e{background:#e8e8e8}
 .lbl{display:flex;gap:4px;font-size:9.5px;color:#aaa}
 .lbl span{flex:1;text-align:center}
-.spark{display:flex;align-items:flex-end;gap:2px;height:60px;border-bottom:1px solid #ddd;margin-bottom:6px}
+.spark{display:flex;align-items:flex-end;gap:2px;height:56px;border-bottom:1px solid #ddd;margin-bottom:6px}
 .spark .b{flex:1;background:#111;min-height:1px}
 .prog{height:8px;background:#f0f0f0;margin:6px 0 4px;position:relative}
 .prog i{position:absolute;top:0;bottom:0;left:0;background:#111}
-textarea{width:100%;border:1px solid #111;padding:12px;font-family:inherit;font-size:14px;min-height:80px;color:#111}
+textarea{width:100%;border:1px solid #111;padding:12px;font-family:inherit;font-size:14px;min-height:76px;color:#111}
 .gbtn{width:100%;background:#111;border:1px solid #111;color:#fff;font-size:13px;padding:13px;font-family:inherit;margin-top:8px}
 .set{border-bottom:1px solid #eee;padding:11px 0;overflow:hidden;font-size:13.5px}
-.set .x{float:right;color:#bbb;font-size:16px;padding:0 4px}
+.set .x{float:right;color:#bbb;font-size:16px;padding:0 6px}
 .tb{width:100%;border-collapse:collapse;font-size:13px}
 .tb th{text-align:left;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#999;font-weight:600;padding:8px 0;border-bottom:1px solid #111}
 .tb td{padding:10px 0;border-bottom:1px solid #eee}
@@ -109,13 +107,34 @@ textarea{width:100%;border:1px solid #111;padding:12px;font-family:inherit;font-
 .pend{border:1px solid #111;padding:12px 13px;margin-bottom:6px;font-size:13px}
 .pend.ok{border-color:#ddd;color:#aaa}
 .pend .x{float:right;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid #ddd;padding:4px 7px;color:#888}
+.mov{border-bottom:1px solid #eee;padding:12px 0;overflow:hidden}
+.mov .c{font-size:14px}
+.mov .f{font-size:11px;color:#999;margin-top:2px}
+.mov .i{float:right;font-size:15px;font-weight:700;margin-left:10px}
+.mov .i.g{color:#111}
+.mov .i.in{color:#111;border-bottom:2px solid #111}
+.mov .x{float:right;color:#ccc;font-size:15px;padding:0 4px}
+.saldo{border:2px solid #111;padding:16px;margin-bottom:10px}
+.saldo .k{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#888}
+.saldo .n{font-size:38px;font-weight:800;letter-spacing:-1.5px;margin-top:4px}
+.saldo .s{font-size:12px;color:#888;margin-top:6px}
+.nota{border-left:3px solid #111;padding:2px 0 2px 12px;margin-bottom:14px}
+.nota .f{font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:#999;margin-bottom:4px}
+.nota .t{font-size:14px;line-height:1.55}
+.nota .x{float:right;color:#ccc;font-size:14px}
+.sync{position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;font-size:11px;padding:8px;text-align:center;letter-spacing:1px;text-transform:uppercase}
+.sync.err{background:#E4572E}
 </style>
 </head>
 <body>
-<div class="w" id="root"></div>
+<div class="w" id="root">Cargando...</div>
+<div id="sync"></div>
 <script>
-var KEY='tracker-v3',tab='hoy',openG={},verMas=false,data={start:null,days:{},metrics:{},gym:{},pend:{}};
+var URL_DB='https://wsqjswbcgrbtlemqgejg.supabase.co/rest/v1/';
+var KEY_DB='sb_publishable_RndM1mkmXNVHJPc0D1KY9A_AlQtAkHj';
 var Y='https://www.youtube.com/results?search_query=';
+var tab='hoy',openG={},verMas=false;
+var S={inicio:null,dias:{},gym:[],fin:[],notas:[],pend:{},tests:{},rev:{}};
 var SES={1:['Sesion A - Pierna rodilla + core',''],2:['Baloncesto',''],3:['Sesion B - Torso + hombro',''],4:['Baloncesto',''],5:['Sesion C - Pierna cadera + potencia',''],6:['Baloncesto',''],0:['Descanso','']};
 var PENDIENTES=[['eco','Ecografia dinamica de codo','Di: chasquido posteromedial reproducible y hormigueo en menique y anular'],['cobb','Angulo de Cobb','Esta en el informe de tu radiografia de columna'],['podo','Revision de plantillas','A los 4-6 meses, para valorar si reducir soporte']];
 var EJ_AM=[['Respiracion 90/90','5 respiraciones lentas','https://www.youtube.com/watch?v=xmDQfryw0IY'],['Knee-to-wall','2 x 10 por pierna','https://www.youtube.com/watch?v=FiQ610bFuNw'],['Transiciones 90/90 cadera','2 x 8 (si no sale: version en silla)','https://jackhanrahanfitness.com/learn-the-90-90-stretch-eliminate-tight-hips/'],['World greatest stretch','5 por lado','https://www.youtube.com/watch?v=-CiWQ2IvY34'],['Open book toracico','8 por lado','https://www.youtube.com/watch?v=rDviWORCWEw'],['Dead bug','2 x 8 por lado, lumbar pegada','https://www.youtube.com/watch?v=g_BYB0R-4Ws'],['Pull-apart con banda','15 (sin banda: toalla, isometrico 8 x 5 s)','https://www.youtube.com/watch?v=LoBBo1dtY6I'],['Rotacion externa','15 por brazo, codo pegado','https://www.youtube.com/watch?v=_UvmPNGtlPM']];
@@ -127,48 +146,74 @@ var EJ_PROT=[['Proteina en cada comida','Tamano de tu palma. Es la unica variabl
 var EJ_SUEN=[['8 horas','Dos noches seguidas bajo 6 h: el dia de fuerza pasa a movilidad',''],['Codo estirado al dormir','Evita dormir con el brazo muy doblado','']];
 var EJ_CREA=[['5 g al dia','Cualquier hora, con agua. Sin fase de carga',''],['Aviso','Subiras 1-2 kg de agua las primeras semanas. No toques nada por eso','']];
 var EJ_AZUC=[['Fuera','Refrescos, bolleria, snacks de bolsa, alcohol',''],['Si cuentan como limpios','Fruta, pan, frutos secos, y carbohidrato peri-entreno',''],['Regla 90/10','Las normas absolutas se rompen enteras el dia que fallas una vez','']];
-var DAILY=[['am','Bloque AM','12 min, movilidad sin impacto'],['pie','Protocolo pie-tibia','9 min, soleo, arco, tibial'],['codo','Bloque codo-hombro','8 min, isometricos, antebrazo'],['flex','Flexibilidad','12 min, noche, nunca antes de fuerza'],['ses','Sesion programada',''],['prot','Proteina en las 3 comidas','Palma de mano por comida'],['crea','Creatina 5 g','Cualquier hora, con agua'],['suen','Sueno 8 h','Es parte del plan, no un extra'],['azuc','Sin ultraprocesados','Fruta y carbo peri-entreno si son limpios']];
+var DAILY=[['am','Bloque AM','12 min, movilidad sin impacto'],['pie','Protocolo pie-tibia','9 min, soleo, arco, tibial'],['codo','Bloque codo-hombro','8 min, isometricos, antebrazo'],['flex','Flexibilidad','12 min, noche'],['ses','Sesion programada',''],['prot','Proteina en las 3 comidas','Palma de mano por comida'],['crea','Creatina 5 g',''],['suen','Sueno 8 h',''],['azuc','Sin ultraprocesados','']];
 var PAINS=[['tibia','Dolor tibia',1],['codoP','Dolor codo',1],['lumbar','Dolor lumbar',0],['planta','Dolor planta del pie',0]];
 var METRICS=[['ktw','Knee-to-wall','cm'],['sr','Sit and reach','cm'],['plI','Plancha lateral izq','s'],['plD','Plancha lateral der','s'],['eq','Equilibrio ojos cerrados','s'],['calf','Gemelo 1 pierna','reps'],['salto','Salto vertical','cm'],['sent','Sentadilla 5RM','kg']];
-var RULES=[['Regla del dolor',['Durante el ejercicio: hasta 3 sobre 10 es aceptable.','A las 24 h peor que el dia anterior: menos 20% de volumen en la siguiente sesion.','Dolor al dar los primeros pasos de la manana: semana de descarga.']],['Codo - retroceso',['Hormigueo en cualquier momento: bajas una etapa de tiro una semana.','Nunca provoques el chasquido a voluntad.','Fuera: fondos, press cerrado pesado, extensiones en rango final, flexiones con bloqueo, burpees.','Al medico ya si: el codo se bloquea, pierdes extension completa, hinchazon, o el hormigueo pasa a constante.']],['Pliometria - entrada',['Semana 5 como minimo.','4 semanas seguidas con dolor tibial en 2 o menos.','Se cuenta por contactos, no por series. Si ese dia juegas, no hay pliometria.','40, 60, 80, 100 contactos. Dos sesiones por semana.']],['Progresion de cargas',['Sube peso solo cuando completes todas las series limpias con 2 repeticiones en reserva.','Incremento: 2,5 kg en tren superior, 5 kg en tren inferior.','Si el dolor tibial sube, no subes carga esa semana aunque toque.','Primera sesion tras un paron: 60% de lo que crees que puedes.']],['Peso y recomposicion',['Objetivo: subir musculo manteniendo el peso, no ganar peso.','Si el peso sube mas de medio kilo por semana sostenido, estas ganando grasa.','Cada kilo de mas es carga extra sobre la tibia y menos salto.','Proteina en las tres comidas. Sin contar macros.']],['Descarga y sueno',['Semanas 4, 8, 12 y 16: volumen al 60%, intensidad igual.','Domingo sin fuerza ni baloncesto.','Dos noches seguidas bajo 6 h: el dia de fuerza pasa a dia de movilidad.','Creatina 5 g diarios.']]];
-var ALIAS={'sentadilla frontal':'Sentadilla frontal','sentadilla':'Sentadilla','peso muerto rumano':'Peso muerto rumano','peso muerto':'Peso muerto rumano','rumano':'Peso muerto rumano','rdl':'Peso muerto rumano','frontal':'Sentadilla frontal','bulgara':'Bulgara','bulgaras':'Bulgara','zancada':'Zancadas','zancadas':'Zancadas','hip thrust':'Hip thrust','thrust':'Hip thrust','nordico':'Curl nordico','nordicos':'Curl nordico','gemelo sentado':'Gemelo sentado','soleo':'Gemelo sentado','talon sentado':'Gemelo sentado','gemelo':'Gemelo de pie','talon':'Gemelo de pie','press banca':'Press banca','banca':'Press banca','press militar':'Press militar','militar':'Press militar','dominada':'Dominadas','dominadas':'Dominadas','remo':'Remo','face pull':'Face pull','curl':'Curl biceps','biceps':'Curl biceps','copenhagen':'Copenhagen','ab wheel':'Ab wheel','rueda':'Ab wheel','farmer':'Farmer','muneca':'Flexion de muneca','antebrazo':'Flexion de muneca'};
+var ALIAS={'sentadilla frontal':'Sentadilla frontal','sentadilla':'Sentadilla','peso muerto rumano':'Peso muerto rumano','peso muerto':'Peso muerto rumano','rumano':'Peso muerto rumano','rdl':'Peso muerto rumano','frontal':'Sentadilla frontal','bulgara':'Bulgara','bulgaras':'Bulgara','zancada':'Zancadas','zancadas':'Zancadas','hip thrust':'Hip thrust','thrust':'Hip thrust','nordico':'Curl nordico','gemelo sentado':'Gemelo sentado','soleo':'Gemelo sentado','talon sentado':'Gemelo sentado','gemelo':'Gemelo de pie','talon':'Gemelo de pie','press banca':'Press banca','banca':'Press banca','press militar':'Press militar','militar':'Press militar','dominada':'Dominadas','dominadas':'Dominadas','remo':'Remo','face pull':'Face pull','curl':'Curl biceps','biceps':'Curl biceps','copenhagen':'Copenhagen','ab wheel':'Ab wheel','farmer':'Farmer','muneca':'Flexion de muneca','antebrazo':'Flexion de muneca'};
+var CATS=['comida','super','transporte','ocio','salud','gimnasio','ropa','casa','suscripciones','otros'];
+var CAT_AL={'super':'super','supermercado':'super','compra':'super','comida':'comida','cena':'comida','comer':'comida','restaurante':'comida','desayuno':'comida','cafe':'comida','gasolina':'transporte','taxi':'transporte','uber':'transporte','metro':'transporte','bus':'transporte','tren':'transporte','avion':'transporte','vuelo':'transporte','cine':'ocio','ocio':'ocio','copas':'ocio','fisio':'salud','medico':'salud','farmacia':'salud','salud':'salud','gimnasio':'gimnasio','gym':'gimnasio','proteina':'gimnasio','creatina':'gimnasio','ropa':'ropa','zapatillas':'ropa','alquiler':'casa','luz':'casa','agua':'casa','internet':'casa','casa':'casa','netflix':'suscripciones','spotify':'suscripciones','suscripcion':'suscripciones'};
 function pad(n){return n<10?'0'+n:''+n}
 function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
 function tk(){return iso(new Date())}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}}
-function load(){try{var v=localStorage.getItem(KEY);if(v)data=JSON.parse(v)}catch(e){}if(!data.gym)data.gym={};if(!data.pend)data.pend={}}
-function dayNum(){if(!data.start)return 1;var a=new Date(data.start+'T00:00:00'),b=new Date(tk()+'T00:00:00');return Math.floor((b-a)/86400000)+1}
+function estado(msg,err){var e=document.getElementById('sync');if(!msg){e.innerHTML='';return}e.innerHTML='<div class="sync '+(err?'err':'')+'">'+msg+'</div>';if(!err)setTimeout(function(){if(document.getElementById('sync'))document.getElementById('sync').innerHTML=''},1500)}
+function api(metodo,ruta,cuerpo){
+var o={method:metodo,headers:{'apikey':KEY_DB,'Authorization':'Bearer '+KEY_DB,'Content-Type':'application/json','Prefer':metodo==='POST'?'return=representation':'resolution=merge-duplicates,return=representation'}};
+if(cuerpo)o.body=JSON.stringify(cuerpo);
+return fetch(URL_DB+ruta,o).then(function(r){
+if(!r.ok)return r.text().then(function(t){throw new Error(t)});
+return r.status===204?null:r.json()})}
+function guardarDia(d){
+estado('Guardando');
+api('POST','dias?on_conflict=fecha',[{fecha:d.fecha,bloques:d.bloques,dolor:d.dolor,hormigueo:d.hormigueo,primer_paso:d.primer_paso,peso:d.peso}])
+.then(function(){estado('Guardado')})['catch'](function(e){estado('Error al guardar. Revisa la conexion',1);console.error(e)})}
+function cargar(){
+var desde=new Date();desde.setDate(desde.getDate()-90);var d90=iso(desde);
+var mes=new Date();mes.setMonth(mes.getMonth()-2);var m2=iso(mes);
+return Promise.all([
+api('GET','dias?select=*&fecha=gte.'+d90+'&order=fecha.desc'),
+api('GET','gym?select=*&fecha=gte.'+d90+'&order=fecha.desc'),
+api('GET','finanzas?select=*&fecha=gte.'+m2+'&order=fecha.desc'),
+api('GET','notas?select=*&order=fecha.desc&limit=60'),
+api('GET','pendientes?select=*'),
+api('GET','tests?select=*'),
+api('GET','config?select=*')
+]).then(function(r){
+r[0].forEach(function(x){S.dias[x.fecha]={fecha:x.fecha,bloques:x.bloques||{},dolor:x.dolor||{},hormigueo:!!x.hormigueo,primer_paso:x.primer_paso,peso:x.peso?parseFloat(x.peso):null}});
+S.gym=r[1]||[];S.fin=r[2]||[];S.notas=r[3]||[];
+(r[4]||[]).forEach(function(p){S.pend[p.clave]=p.hecho});
+(r[5]||[]).forEach(function(t){S.tests[t.semana]=t.valores||{}});
+(r[6]||[]).forEach(function(c){if(c.clave==='inicio')S.inicio=c.valor});
+})}
+function hoy(){var k=tk();if(!S.dias[k])S.dias[k]={fecha:k,bloques:{},dolor:{},hormigueo:false,primer_paso:null,peso:null};return S.dias[k]}
+function dOff(n){var d=new Date();d.setDate(d.getDate()-n);return S.dias[iso(d)]}
+function dayNum(){if(!S.inicio)return 1;var a=new Date(S.inicio+'T00:00:00'),b=new Date(tk()+'T00:00:00');return Math.floor((b-a)/86400000)+1}
 function weekNum(){return Math.floor((dayNum()-1)/7)+1}
 function phase(){var w=weekNum();if(w<=6)return 'Fase 1 - Base';if(w<=12)return 'Fase 2 - Fuerza';if(w<=18)return 'Fase 3 - Potencia';return 'Fase 4 - Competicion'}
 function stage(){var w=weekNum();if(w<=2)return 'Etapa 1 - cero tiro';if(w<=4)return 'Etapa 2 - 50 tiros';if(w<=6)return 'Etapa 3 - 100 tiros';return 'Etapa 4 - 150-200 tiros'}
-function today(){var k=tk();if(!data.days[k])data.days[k]={done:{},pain:{},tingle:false,paso:null,peso:null};return data.days[k]}
-function begin(){data.start=tk();save();draw()}
+function empezar(){S.inicio=tk();api('POST','config?on_conflict=clave',[{clave:'inicio',valor:S.inicio}]).then(function(){draw()});draw()}
 function go(t){tab=t;draw();window.scrollTo(0,0)}
-function tog(id){var d=today();d.done[id]=!d.done[id];save();draw()}
+function tog(id){var d=hoy();d.bloques[id]=!d.bloques[id];guardarDia(d);draw()}
 function togG(id){openG[id]=!openG[id];draw()}
 function togMas(){verMas=!verMas;draw()}
-function setPaso(v){var d=today();d.paso=v;save();draw()}
-function setPeso(v){var d=today();d.peso=v?parseFloat(String(v).split(',').join('.')):null;save()}
-function togPend(id){data.pend[id]=!data.pend[id];save();draw()}
-function setPain(id,v){var d=today();d.pain[id]=(d.pain[id]===v)?null:v;save();draw()}
-function tingle(){var d=today();d.tingle=!d.tingle;save();draw()}
-function setM(w,id,v){if(!data.metrics[w])data.metrics[w]={};data.metrics[w][id]=v;save()}
-function exportar(){window.prompt('Copia este texto y guardalo. Es tu copia de seguridad.',JSON.stringify(data))}
-function importar(){var t=window.prompt('Pega aqui tu copia de seguridad:');if(!t)return;try{data=JSON.parse(t);save();draw()}catch(e){alert('No se pudo leer')}}
-function guiaDe(id,dow){if(id==='am')return EJ_AM;if(id==='pie')return EJ_PIE;if(id==='codo')return EJ_CODO;if(id==='flex')return EJ_FLEX[dow]||[];if(id==='ses')return EJ_SES[dow]||[];if(id==='prot')return EJ_PROT;if(id==='crea')return EJ_CREA;if(id==='suen')return EJ_SUEN;if(id==='azuc')return EJ_AZUC;return []}
-function dOff(n){var d=new Date();d.setDate(d.getDate()-n);return data.days[iso(d)]}
-function doneCount(rec){var c=0,j;if(!rec)return 0;for(j=0;j<DAILY.length;j++)if(rec.done[DAILY[j][0]])c++;return c}
+function setPaso(v){var d=hoy();d.primer_paso=v;guardarDia(d);draw()}
+function setPeso(v){var d=hoy();d.peso=v?parseFloat(String(v).split(',').join('.')):null;guardarDia(d)}
+function setPain(id,v){var d=hoy();d.dolor[id]=(d.dolor[id]===v)?null:v;guardarDia(d);draw()}
+function tingle(){var d=hoy();d.hormigueo=!d.hormigueo;guardarDia(d);draw()}
+function togPend(id){S.pend[id]=!S.pend[id];api('POST','pendientes?on_conflict=clave',[{clave:id,hecho:S.pend[id]}]);draw()}
+function setM(w,id,v){if(!S.tests[w])S.tests[w]={};S.tests[w][id]=v;api('POST','tests?on_conflict=semana',[{semana:w,valores:S.tests[w],medido:tk()}])}
+function doneCount(rec){var c=0,j;if(!rec)return 0;for(j=0;j<DAILY.length;j++)if(rec.bloques[DAILY[j][0]])c++;return c}
 function adher(n){var s=0,t=0,i,lim=Math.min(n,dayNum());for(i=0;i<lim;i++){s+=doneCount(dOff(i));t+=DAILY.length}return t?Math.round(s/t*100):0}
-function painAvg(n,id){var v=[],i,r;for(i=0;i<n;i++){r=dOff(i);if(r&&r.pain[id]!==null&&r.pain[id]!==undefined)v.push(r.pain[id])}if(!v.length)return null;var s=0;for(i=0;i<v.length;i++)s+=v[i];return Math.round(s/v.length*10)/10}
+function painAvg(n,id){var v=[],i,r;for(i=0;i<n;i++){r=dOff(i);if(r&&r.dolor[id]!==null&&r.dolor[id]!==undefined)v.push(r.dolor[id])}if(!v.length)return null;var s=0;for(i=0;i<v.length;i++)s+=v[i];return Math.round(s/v.length*10)/10}
 function pesoUlt(n){var v=[],i,r;for(i=0;i<n;i++){r=dOff(i);if(r&&r.peso)v.push(r.peso)}if(!v.length)return null;var s=0;for(i=0;i<v.length;i++)s+=v[i];return Math.round(s/v.length*10)/10}
-function sesiones(){var c=0,k;for(k in data.days)if(data.days[k].done.ses)c++;return c}
-function hormigueoReciente(){var i,r;for(i=0;i<7;i++){r=dOff(i);if(r&&r.tingle)return true}return false}
-function gymDia(){var k=tk();if(!data.gym[k])data.gym[k]=[];return data.gym[k]}
-function delSet(i){gymDia().splice(i,1);save();draw()}
-function parseDic(){
+function sesiones(){var c=0,k;for(k in S.dias)if(S.dias[k].bloques.ses)c++;return c}
+function hormigueoReciente(){var i,r;for(i=0;i<7;i++){r=dOff(i);if(r&&r.hormigueo)return true}return false}
+function pendAbiertos(){var n=0,i;for(i=0;i<PENDIENTES.length;i++)if(!S.pend[PENDIENTES[i][0]])n++;return n}
+function guiaDe(id,dow){if(id==='am')return EJ_AM;if(id==='pie')return EJ_PIE;if(id==='codo')return EJ_CODO;if(id==='flex')return EJ_FLEX[dow]||[];if(id==='ses')return EJ_SES[dow]||[];if(id==='prot')return EJ_PROT;if(id==='crea')return EJ_CREA;if(id==='suen')return EJ_SUEN;if(id==='azuc')return EJ_AZUC;return []}
+function gymHoy(){var k=tk();return S.gym.filter(function(g){return g.fecha===k})}
+function parseGym(){
 var el=document.getElementById('dic'),t=(el.value||'').toLowerCase();
 if(!t){alert('Dicta o escribe algo primero');return}
-var partes=t.split(/[,;\n]+/),n=0,i,k;
+var partes=t.split(/[,;\n]+/),filas=[],i,k;
 for(i=0;i<partes.length;i++){var p=' '+partes[i].trim()+' ';if(!p.trim())continue;
 var nom=null;
 for(k in ALIAS){if(p.indexOf(k)>=0){if(!nom||k.length>nom[0].length)nom=[k,ALIAS[k]]}}
@@ -178,79 +223,116 @@ var mS=resto.match(/(\d+)\s*(?:x|por)\s*(\d+)/);
 var ser=null,rep=null;
 if(mS){ser=parseInt(mS[1]);rep=parseInt(mS[2]);resto=resto.split(mS[0]).join(' ')}
 var mP=resto.match(/(\d+(?:[.,]\d+)?)/);
-var peso=mP?parseFloat(mP[1].split(',').join('.')):null;
-if(peso===null&&ser===null)continue;
-gymDia().push({e:nom[1],w:peso,s:ser,r:rep});n++}
-save();el.value='';
-if(n===0)alert('No he reconocido ningun ejercicio. Prueba asi: sentadilla 80 4x5');
-draw()}
-function ultimo(nom){var ks=[],k,i,j;for(k in data.gym)ks.push(k);ks.sort();
-for(i=ks.length-1;i>=0;i--){var arr=data.gym[ks[i]];for(j=arr.length-1;j>=0;j--)if(arr[j].e===nom&&arr[j].w!=null)return {w:arr[j].w,d:ks[i]}}
-return null}
-function anterior(nom){var ks=[],k,i,j,f=0;for(k in data.gym)ks.push(k);ks.sort();
-for(i=ks.length-1;i>=0;i--){var arr=data.gym[ks[i]];for(j=arr.length-1;j>=0;j--)if(arr[j].e===nom&&arr[j].w!=null){f++;if(f===2)return arr[j].w}}
-return null}
-function mejor(nom){var b=null,k,i;for(k in data.gym)for(i=0;i<data.gym[k].length;i++){var s=data.gym[k][i];if(s.e===nom&&s.w!=null&&(b===null||s.w>b))b=s.w}return b}
-function usados(){var out=[],k,i;for(k in data.gym)for(i=0;i<data.gym[k].length;i++){var e=data.gym[k][i].e;if(out.indexOf(e)<0)out.push(e)}out.sort();return out}
-function totalSeries(){var c=0,k;for(k in data.gym)c+=data.gym[k].length;return c}
+var pe=mP?parseFloat(mP[1].split(',').join('.')):null;
+if(pe===null&&ser===null)continue;
+filas.push({fecha:tk(),ejercicio:nom[1],peso:pe,series:ser,reps:rep})}
+if(!filas.length){alert('No he reconocido ningun ejercicio. Prueba: sentadilla 80 4x5');return}
+estado('Guardando');
+api('POST','gym',filas).then(function(r){S.gym=r.concat(S.gym);el.value='';estado('Guardado');draw()})['catch'](function(e){estado('Error al guardar',1);console.error(e)})}
+function borrarGym(id){api('DELETE','gym?id=eq.'+id).then(function(){S.gym=S.gym.filter(function(g){return g.id!==id});draw()})}
+function ultimo(nom){var i;for(i=0;i<S.gym.length;i++)if(S.gym[i].ejercicio===nom&&S.gym[i].peso!=null)return {w:parseFloat(S.gym[i].peso),d:S.gym[i].fecha};return null}
+function anterior(nom){var f=0,i;for(i=0;i<S.gym.length;i++)if(S.gym[i].ejercicio===nom&&S.gym[i].peso!=null){f++;if(f===2)return parseFloat(S.gym[i].peso)}return null}
+function mejor(nom){var b=null,i;for(i=0;i<S.gym.length;i++){var g=S.gym[i];if(g.ejercicio===nom&&g.peso!=null){var v=parseFloat(g.peso);if(b===null||v>b)b=v}}return b}
+function usados(){var o=[],i;for(i=0;i<S.gym.length;i++)if(o.indexOf(S.gym[i].ejercicio)<0)o.push(S.gym[i].ejercicio);o.sort();return o}
 function subiendoCargas(){var us=usados(),n=0,i;for(i=0;i<us.length;i++){var u=ultimo(us[i]),a=anterior(us[i]);if(u&&a!=null&&u.w>a)n++}return n}
-function seriesUlt7(){var c=0,i;for(i=0;i<7;i++){var d=new Date();d.setDate(d.getDate()-i);var g=data.gym[iso(d)];if(g)c+=g.length}return c}
-function pendAbiertos(){var n=0,i;for(i=0;i<PENDIENTES.length;i++)if(!data.pend[PENDIENTES[i][0]])n++;return n}
+function seriesUlt7(){var c=0,i,lim=new Date();lim.setDate(lim.getDate()-6);var l=iso(lim);for(i=0;i<S.gym.length;i++)if(S.gym[i].fecha>=l)c++;return c}
+function parseFin(){
+var el=document.getElementById('finin'),t=(el.value||'').toLowerCase().trim();
+if(!t){alert('Dicta o escribe algo primero');return}
+var partes=t.split(/[,;\n]+/),filas=[],i,k;
+for(i=0;i<partes.length;i++){
+var p=partes[i].trim();if(!p)continue;
+var esIngreso=/(cobr|ingres|nomina|factura|venta|me han pagado|entrada de)/.test(p);
+var mP=p.match(/(\d+(?:[.,]\d+)?)/);
+if(!mP)continue;
+var imp=parseFloat(mP[1].split(',').join('.'));
+var concepto=p.split(mP[0]).join(' ').split(/\b(euros|euro|eur|pavos)\b/).join(' ').trim();
+concepto=concepto.split(/\s+/).join(' ');
+var cat='otros';
+for(k in CAT_AL){if(p.indexOf(k)>=0){cat=CAT_AL[k];break}}
+if(esIngreso)cat='ingreso';
+filas.push({fecha:tk(),tipo:esIngreso?'ingreso':'gasto',categoria:cat,concepto:concepto||cat,importe:imp,fijo:false})}
+if(!filas.length){alert('No he encontrado ningun importe. Prueba: cena 32, gasolina 60');return}
+estado('Guardando');
+api('POST','finanzas',filas).then(function(r){S.fin=r.concat(S.fin);el.value='';estado('Guardado');draw()})['catch'](function(e){estado('Error al guardar',1);console.error(e)})}
+function borrarFin(id){api('DELETE','finanzas?id=eq.'+id).then(function(){S.fin=S.fin.filter(function(f){return f.id!==id});draw()})}
+function togFijo(id){var f=null,i;for(i=0;i<S.fin.length;i++)if(S.fin[i].id===id)f=S.fin[i];if(!f)return;f.fijo=!f.fijo;api('PATCH','finanzas?id=eq.'+id,{fijo:f.fijo});draw()}
+function mesActual(){var d=new Date();return d.getFullYear()+'-'+pad(d.getMonth()+1)}
+function mesAnterior(){var d=new Date();d.setMonth(d.getMonth()-1);return d.getFullYear()+'-'+pad(d.getMonth()+1)}
+function sumaMes(mes,tipo){var s=0,i;for(i=0;i<S.fin.length;i++){var f=S.fin[i];if(f.fecha.slice(0,7)===mes&&f.tipo===tipo)s+=parseFloat(f.importe)}return Math.round(s*100)/100}
+function gastosFijos(mes){var s=0,i;for(i=0;i<S.fin.length;i++){var f=S.fin[i];if(f.fecha.slice(0,7)===mes&&f.tipo==='gasto'&&f.fijo)s+=parseFloat(f.importe)}return Math.round(s*100)/100}
+function porCategoria(mes){var o={},i;for(i=0;i<S.fin.length;i++){var f=S.fin[i];if(f.fecha.slice(0,7)===mes&&f.tipo==='gasto'){o[f.categoria]=(o[f.categoria]||0)+parseFloat(f.importe)}}
+var arr=[];for(var k in o)arr.push([k,Math.round(o[k]*100)/100]);arr.sort(function(a,b){return b[1]-a[1]});return arr}
+function eur(n){return (n<0?'-':'')+Math.abs(n).toFixed(2).split('.').join(',')+' EUR'}
+function guardarNota(){
+var el=document.getElementById('notain'),t=(el.value||'').trim();
+if(!t){alert('Escribe o dicta algo primero');return}
+estado('Guardando');
+api('POST','notas',[{fecha:tk(),texto:t}]).then(function(r){S.notas=r.concat(S.notas);el.value='';estado('Guardado');draw()})['catch'](function(e){estado('Error al guardar',1)})}
+function borrarNota(id){api('DELETE','notas?id=eq.'+id).then(function(){S.notas=S.notas.filter(function(n){return n.id!==id});draw()})}
 function foco(){
-var f=[],d=today(),w=weekNum(),dow=new Date().getDay();
+var f=[],d=hoy(),w=weekNum(),dow=new Date().getDay();
 var t2=painAvg(2,'tibia');
-if(d.paso===1)f.push('<b>Has amanecido con dolor al pisar.</b> Semana de descarga: volumen al 60%, cero impacto extra. Esto no se negocia.');
-if(d.tingle||hormigueoReciente())f.push('<b>Codo en retroceso.</b> Bajas una etapa de tiro esta semana. No provoques el chasquido ni para comprobarlo.');
+if(d.primer_paso===1)f.push('<b>Has amanecido con dolor al pisar.</b> Semana de descarga: volumen al 60%, cero impacto extra. Esto no se negocia.');
+if(d.hormigueo||hormigueoReciente())f.push('<b>Codo en retroceso.</b> Bajas una etapa de tiro esta semana. No provoques el chasquido ni para comprobarlo.');
 if(t2!==null&&t2>3)f.push('<b>Tibia cargada.</b> Menos 20% de volumen en pierna y cero impacto extra.');
 if(w%4===0)f.push('<b>Semana de descarga.</b> Volumen al 60%, intensidad igual. Encontrarte bien es la senal de que hace falta.');
-if(!d.done.pie)f.push('<b>Protocolo pie-tibia.</b> Es el bloque que trata la lesion. Si hoy solo haces una cosa, que sea el gemelo sentado.');
-if(dow===1||dow===3||dow===5){if(!d.done.ses)f.push('<b>'+SES[dow][0]+'.</b> Tres series, 2 repeticiones en reserva. Nada de bloquear el codo.')}
+if(!d.bloques.pie)f.push('<b>Protocolo pie-tibia.</b> Es el bloque que trata la lesion. Si hoy solo haces una cosa, que sea el gemelo sentado.');
+if(dow===1||dow===3||dow===5){if(!d.bloques.ses)f.push('<b>'+SES[dow][0]+'.</b> Tres series, 2 repeticiones en reserva. Nada de bloquear el codo.')}
 else if(dow===0)f.push('<b>Descanso.</b> Sin fuerza ni baloncesto. Solo flexibilidad larga.');
-else if(!d.done.ses)f.push('<b>Baloncesto, maximo 60 min.</b> '+stage()+'. Paras si aparece hormigueo o dolor tibial.');
+else if(!d.bloques.ses)f.push('<b>Baloncesto, maximo 60 min.</b> '+stage()+'. Paras si aparece hormigueo o dolor tibial.');
 if(w<5)f.push('<b>Sin pliometria ni saltos.</b> Entra en la semana 5 y solo si el dolor tibial esta estable en 2 o menos.');
-if(!d.done.suen)f.push('<b>Dormir 8 h.</b> Es la herramienta de recuperacion mas potente que tienes.');
-if(pendAbiertos()>0&&dayNum()%7===1)f.push('<b>Tienes '+pendAbiertos()+' pendiente(s) medico(s).</b> Miralo en la pestana Tests.');
+if(!d.bloques.suen)f.push('<b>Dormir 8 h.</b> Es la herramienta de recuperacion mas potente que tienes.');
 if(adher(7)<60&&dayNum()>7)f.push('<b>Adherencia floja.</b> Prioriza AM, pie-tibia y sueno. Lo demas es secundario esta semana.');
 return f.slice(0,4)}
 function lectura(){
 var L=[],a7=adher(7),a28=adher(28),w=weekNum();
 var t7=painAvg(7,'tibia'),t28=painAvg(28,'tibia');
-if(dayNum()<4){L.push('Llevas <b>'+dayNum()+' dia(s)</b>. Todavia no hay datos suficientes para leer nada. Vuelve el dia 7.');return L}
+if(dayNum()<4){L.push('Llevas <b>'+dayNum()+' dia(s)</b>. Todavia no hay datos suficientes para leer nada. Vuelve el dia 7.');}
+else{
 var cal=a7>=95?'excelente':a7>=80?'solida':a7>=60?'irregular':'floja';
 L.push('Adherencia de <b>'+a7+'%</b> en 7 dias: <b>'+cal+'</b>. '+(a7>=80?'Ese es el nivel que hace que el plan funcione.':a7>=60?'Por debajo del 80% el estimulo se diluye. Recorta bloques antes que hacerlos a medias.':'Ahora mismo el plan no se esta ejecutando. Reduce a tres bloques al dia y consolida eso.'));
-if(a28>0&&Math.abs(a7-a28)>=8)L.push(a7>a28?'Vas <b>mejorando</b>: la semana esta '+(a7-a28)+' puntos por encima de tu media de 28 dias.':'Has <b>bajado</b> '+(a28-a7)+' puntos respecto a tu media mensual. Suele indicar que el volumen supera lo que puedes sostener.');
 if(t7!==null&&t28!==null){
 if(t7<t28-0.2)L.push('Dolor tibial <b>bajando</b> ('+t7+' frente a '+t28+'). La tibia esta ganando capacidad. Manten el protocolo, no lo aceleres.');
-else if(t7>t28+0.2)L.push('Dolor tibial <b>subiendo</b> ('+t7+' frente a '+t28+'). No avances de fase esta semana. Revisa el volumen de impacto de los ultimos 7 dias.');
+else if(t7>t28+0.2)L.push('Dolor tibial <b>subiendo</b> ('+t7+' frente a '+t28+'). No avances de fase esta semana.');
 else L.push('Dolor tibial <b>estable</b> en '+t7+'. Estable no es fracaso: en una lesion de cuatro anos, no empeorar mientras subes carga ya es progreso.');
-}else if(t7!==null)L.push('Dolor tibial medio de <b>'+t7+'</b>. Necesito cuatro semanas de registro para darte una tendencia real.');
-else L.push('<b>Sin datos de dolor.</b> Es el numero mas importante del plan. Apuntalo cada manana al levantarte.');
+}else if(t7!==null)L.push('Dolor tibial medio de <b>'+t7+'</b>. Necesito cuatro semanas para darte una tendencia real.');
+else L.push('<b>Sin datos de dolor.</b> Es el numero mas importante del plan. Apuntalo cada manana.');
 var p7=pesoUlt(7),p28=pesoUlt(28);
 if(p7!==null&&p28!==null){var dp=Math.round((p7-p28)*10)/10;
-if(dp>0.7)L.push('Peso <b>subiendo</b> ('+p7+' kg frente a '+p28+' de media mensual). Mas de medio kilo por semana sostenido es grasa, no musculo, y es carga extra sobre la tibia.');
-else if(dp<-0.7)L.push('Peso <b>bajando</b> ('+p7+' kg). Vigila que la proteina no caiga: perder peso rapido se lleva musculo por delante.');
-else L.push('Peso <b>estable</b> en '+p7+' kg. Es exactamente lo que buscas: recomposicion, no ganancia de peso.');
-}else if(p7!==null)L.push('Peso medio de <b>'+p7+' kg</b> esta semana. Con cuatro semanas te dare la tendencia.');
+if(dp>0.7)L.push('Peso <b>subiendo</b> ('+p7+' kg frente a '+p28+'). Mas de medio kilo por semana sostenido es grasa, no musculo, y es carga extra sobre la tibia.');
+else if(dp<-0.7)L.push('Peso <b>bajando</b> ('+p7+' kg). Vigila que la proteina no caiga.');
+else L.push('Peso <b>estable</b> en '+p7+' kg. Es lo que buscas: recomposicion, no ganancia de peso.');
+}else if(p7!==null)L.push('Peso medio de <b>'+p7+' kg</b> esta semana.');
 var s7=seriesUlt7(),sub=subiendoCargas();
-if(s7===0&&w>1)L.push('<b>Sin series de gimnasio registradas</b> esta semana. Sin ese dato no se puede saber si la fuerza sube.');
-else if(s7>0)L.push('<b>'+s7+' series</b> en 7 dias'+(sub>0?', y <b>'+sub+' ejercicio(s) han subido</b> de carga.':'. Cuando repitas ejercicio veras si la carga sube.'));
+if(s7===0&&w>1)L.push('<b>Sin series de gimnasio registradas</b> esta semana. Sin ese dato no se sabe si la fuerza sube.');
+else if(s7>0)L.push('<b>'+s7+' series</b> en 7 dias'+(sub>0?', y <b>'+sub+' ejercicio(s) han subido</b> de carga.':'.'));
+}
+var mA=mesActual(),ing=sumaMes(mA,'ingreso'),gas=sumaMes(mA,'gasto');
+if(ing||gas){var neto=ing-gas;
+L.push('Este mes: <b>'+eur(ing)+'</b> de ingresos y <b>'+eur(gas)+'</b> de gastos. Neto <b>'+eur(neto)+'</b>.'+(neto<0?' Estas gastando mas de lo que entra.':''));
+var gAnt=sumaMes(mesAnterior(),'gasto');
+if(gAnt>0){var dif=Math.round((gas-gAnt)*100)/100;
+if(Math.abs(dif)>20)L.push('Gasto '+(dif>0?'<b>por encima</b>':'<b>por debajo</b>')+' del mes pasado en '+eur(Math.abs(dif))+'.')}
+var cats=porCategoria(mA);
+if(cats.length)L.push('Tu mayor gasto del mes es <b>'+cats[0][0]+'</b> con '+eur(cats[0][1])+'.');
+}
 if(pendAbiertos()>0)L.push('<b>'+pendAbiertos()+' pendiente(s) medico(s) sin resolver.</b> Es lo unico del plan que no se arregla entrenando.');
 var falta=(4-(w%4))%4;
 L.push('Vas por el <b>dia '+dayNum()+' de 126</b>, '+phase().toLowerCase()+'. '+(falta===0?'Esta semana toca test de medidas.':'Siguiente test en '+falta+' semana(s).')+(w<5?' La pliometria entra en la semana 5.':''));
-if(new Date().getDay()===0)L.push('<b>Es domingo: exporta tu copia de seguridad.</b> Pestana Tests, boton Exportar, y pega el texto en Notas.');
 return L}
 function draw(){var r=document.getElementById('root'),h='',i,j;
-if(!data.start){r.innerHTML='<div class="start"><p class="eye">Plan fisico - 3x3</p><p style="color:#666;font-size:14px">El plan arranca el dia que lo marques.<br>126 dias hasta el final de la fase 4.</p><button onclick="begin()">Empezar hoy</button></div>';return}
-var d=today(),dow=new Date().getDay(),nd=new Date();
+if(!S.inicio){r.innerHTML='<div class="start"><p class="eye">Panel personal</p><p style="color:#666;font-size:14px">El plan arranca el dia que lo marques.<br>126 dias hasta el final de la fase 4.</p><button onclick="empezar()">Empezar hoy</button></div>';return}
+var d=hoy(),dow=new Date().getDay(),nd=new Date();
 var meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 var dias=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
-h+='<div class="hd"><p class="eye">Plan fisico - 3x3</p><span class="big">'+dayNum()+'</span> <span class="of">/ 126 dias</span><div><span class="tag">Semana '+weekNum()+'</span><span class="tag">'+phase()+'</span><span class="tag">'+stage()+'</span>'+(weekNum()%4===0?'<span class="tag hot">Descarga</span>':'')+'</div><div class="dt">'+dias[nd.getDay()]+' '+nd.getDate()+' de '+meses[nd.getMonth()]+'</div></div>';
-h+='<div class="nav"><button class="'+(tab==='hoy'?'on':'')+'" onclick="go(\'hoy\')">Hoy</button><button class="'+(tab==='gym'?'on':'')+'" onclick="go(\'gym\')">Gym</button><button class="'+(tab==='dash'?'on':'')+'" onclick="go(\'dash\')">Panel</button><button class="'+(tab==='reg'?'on':'')+'" onclick="go(\'reg\')">Reglas</button><button class="'+(tab==='med'?'on':'')+'" onclick="go(\'med\')">Tests</button></div>';
+h+='<div class="hd"><p class="eye">Panel personal</p><span class="big">'+dayNum()+'</span> <span class="of">/ 126 dias</span><div><span class="tag">Semana '+weekNum()+'</span><span class="tag">'+phase()+'</span><span class="tag">'+stage()+'</span>'+(weekNum()%4===0?'<span class="tag hot">Descarga</span>':'')+'</div><div class="dt">'+dias[nd.getDay()]+' '+nd.getDate()+' de '+meses[nd.getMonth()]+'</div></div>';
+h+='<div class="nav"><button class="'+(tab==='hoy'?'on':'')+'" onclick="go(\'hoy\')">Hoy</button><button class="'+(tab==='gym'?'on':'')+'" onclick="go(\'gym\')">Gym</button><button class="'+(tab==='din'?'on':'')+'" onclick="go(\'din\')">Dinero</button><button class="'+(tab==='not'?'on':'')+'" onclick="go(\'not\')">Notas</button><button class="'+(tab==='dash'?'on':'')+'" onclick="go(\'dash\')">Panel</button></div>';
 if(tab==='hoy'){
-h+='<div class="chk"><div class="q">Al dar los primeros pasos esta manana, la tibia. Duele?</div><div class="btns"><button class="'+(d.paso===1?'sel':'')+'" onclick="setPaso(1)">Si</button><button class="'+(d.paso===0?'sel':'')+'" onclick="setPaso(0)">No</button></div>';
-if(d.paso===1)h+='<div class="r">Semana de descarga. Ese dolor es el criterio de irritacion osea y manda por encima de como te encuentres despues.</div>';
-else if(d.paso===0)h+='<div class="r">Bien. Ese es el dato que decide si puedes subir carga esta semana.</div>';
-else h+='<div class="r">Contesta antes de levantarte de la cama. Es el criterio que decide la semana entera.</div>';
+h+='<div class="chk"><div class="q">Al dar los primeros pasos esta manana, la tibia. Duele?</div><div class="btns"><button class="'+(d.primer_paso===1?'sel':'')+'" onclick="setPaso(1)">Si</button><button class="'+(d.primer_paso===0?'sel':'')+'" onclick="setPaso(0)">No</button></div>';
+if(d.primer_paso===1)h+='<div class="r">Semana de descarga. Ese dolor es el criterio de irritacion osea y manda por encima de como te encuentres despues.</div>';
+else if(d.primer_paso===0)h+='<div class="r">Bien. Ese es el dato que decide si puedes subir carga esta semana.</div>';
+else h+='<div class="r">Contesta antes de levantarte de la cama.</div>';
 h+='</div>';
 var F=foco();
 h+='<div class="foco"><div class="t">Lo importante de hoy</div><ol>';
@@ -258,37 +340,60 @@ for(i=0;i<F.length;i++)h+='<li>'+F[i]+'</li>';
 h+='</ol></div>';
 h+='<h2>Bloques del dia &nbsp;&nbsp; '+doneCount(d)+'/'+DAILY.length+'</h2>';
 for(i=0;i<DAILY.length;i++){var id=DAILY[i][0];var lab=(id==='ses')?SES[dow][0]:DAILY[i][1];var det=DAILY[i][2];
-h+='<div class="it '+(d.done[id]?'on':'')+'" onclick="tog(\''+id+'\')"><span class="gia" onclick="event.stopPropagation();togG(\''+id+'\')">'+(openG[id]?'cerrar':'ver')+'</span><div class="ck">X</div><div class="l">'+lab+'</div>'+(det?'<div class="d">'+det+'</div>':'')+'<div class="cl"></div></div>';
+h+='<div class="it '+(d.bloques[id]?'on':'')+'" onclick="tog(\''+id+'\')"><span class="gia" onclick="event.stopPropagation();togG(\''+id+'\')">'+(openG[id]?'cerrar':'ver')+'</span><div class="ck">X</div><div class="l">'+lab+'</div>'+(det?'<div class="d">'+det+'</div>':'')+'<div class="cl"></div></div>';
 if(openG[id]){var G=guiaDe(id,dow);h+='<div class="guia">';
 for(j=0;j<G.length;j++){h+='<div class="ex">'+(G[j][2]?'<a href="'+G[j][2]+'" target="_blank" rel="noopener">video</a>':'')+'<div class="n">'+G[j][0]+'</div><div class="s">'+G[j][1]+'</div><div class="cl"></div></div>'}
 h+='</div>'}}
-h+='<h2>Peso de hoy</h2><div class="peso"><label>Kilos</label><input type="number" step="0.1" inputmode="decimal" value="'+(d.peso||'')+'" onchange="setPeso(this.value)"></div><p class="note">En ayunas y despues del bano. No mires el numero de un dia: importa la media semanal.</p>';
+h+='<h2>Peso de hoy</h2><div class="peso"><label>Kilos</label><input type="number" step="0.1" inputmode="decimal" value="'+(d.peso||'')+'" onchange="setPeso(this.value)"></div><p class="note">En ayunas. Importa la media semanal, no el numero de un dia.</p>';
 h+='<h2>Dolor - 0 a 10</h2>';
 for(i=0;i<PAINS.length;i++){if(!PAINS[i][2]&&!verMas)continue;
-var pid=PAINS[i][0],v=d.pain[pid],has=(v!==null&&v!==undefined);
+var pid=PAINS[i][0],v=d.dolor[pid],has=(v!==null&&v!==undefined);
 h+='<div class="pain"><div class="pt"><span class="n">'+PAINS[i][1]+'</span><span class="v">'+(has?v:'-')+'</span></div><div class="sc">';
 for(j=0;j<=10;j++)h+='<button class="'+(v===j?'s':'')+'" onclick="setPain(\''+pid+'\','+j+')">'+j+'</button>';
 h+='</div></div>'}
 h+='<button class="mas" onclick="togMas()">'+(verMas?'Menos':'Lumbar y planta del pie')+'</button>';
-h+='<div class="it '+(d.tingle?'on':'')+'" onclick="tingle()"><div class="ck">X</div><div class="l">Hormigueo en menique o anular</div><div class="cl"></div></div>'}
+h+='<div class="it '+(d.hormigueo?'on':'')+'" onclick="tingle()"><div class="ck">X</div><div class="l">Hormigueo en menique o anular</div><div class="cl"></div></div>'}
 if(tab==='gym'){
-h+='<h2>Registrar por voz o texto</h2>';
-h+='<textarea id="dic" placeholder="sentadilla 80 4x5, bulgara 24 3x8, gemelo sentado 40 3x10"></textarea>';
-h+='<button class="gbtn" onclick="parseDic()">Anadir al registro</button>';
-h+='<p class="note">En el iPhone: toca el campo, pulsa el microfono del teclado y dilo en voz alta.</p>';
-var g=gymDia();
+h+='<h2>Registrar por voz o texto</h2><textarea id="dic" placeholder="sentadilla 80 4x5, bulgara 24 3x8"></textarea><button class="gbtn" onclick="parseGym()">Anadir</button><p class="note">Toca el campo y usa el microfono del teclado.</p>';
+var g=gymHoy();
 h+='<h2>Hoy &nbsp;&nbsp; '+g.length+' series</h2>';
 if(!g.length)h+='<p class="note">Sin registros hoy.</p>';
 for(i=0;i<g.length;i++){var s=g[i];
-h+='<div class="set"><span class="x" onclick="delSet('+i+')">x</span><b>'+s.e+'</b> &nbsp; '+(s.w!=null?s.w+' kg':'')+(s.s?' &nbsp; '+s.s+'x'+s.r:'')+'<div class="cl"></div></div>'}
+h+='<div class="set"><span class="x" onclick="borrarGym('+s.id+')">x</span><b>'+s.ejercicio+'</b> &nbsp; '+(s.peso!=null?parseFloat(s.peso)+' kg':'')+(s.series?' &nbsp; '+s.series+'x'+s.reps:'')+'<div class="cl"></div></div>'}
 var us=usados();
 h+='<h2>Progreso de cargas</h2>';
-if(!us.length)h+='<p class="note">Aun no hay historico. En cuanto registres dos sesiones del mismo ejercicio veras la evolucion aqui.</p>';
+if(!us.length)h+='<p class="note">Aun no hay historico.</p>';
 else{h+='<table class="tb"><tr><th>Ejercicio</th><th style="text-align:right">Ultimo</th><th style="text-align:right">Mejor</th></tr>';
 for(i=0;i<us.length;i++){var u=ultimo(us[i]),a=anterior(us[i]),b=mejor(us[i]);
 var dif='';if(u&&a!=null){var df=Math.round((u.w-a)*10)/10;if(df>0)dif=' <span class="up">+'+df+'</span>';else if(df<0)dif=' <span style="color:#999">'+df+'</span>'}
 h+='<tr><td>'+us[i]+'</td><td class="r">'+(u?u.w+' kg'+dif:'-')+'</td><td class="r">'+(b!=null?b+' kg':'-')+'</td></tr>'}
 h+='</table><p class="note">Sube peso solo cuando completes todas las series limpias con 2 repeticiones en reserva: 2,5 kg arriba, 5 kg abajo.</p>'}}
+if(tab==='din'){
+var mA=mesActual(),ing=sumaMes(mA,'ingreso'),gas=sumaMes(mA,'gasto'),neto=Math.round((ing-gas)*100)/100;
+var fij=gastosFijos(mA),gAnt=sumaMes(mesAnterior(),'gasto');
+h+='<h2>Registrar por voz o texto</h2><textarea id="finin" placeholder="cena 32, gasolina 60, cobrado 1200"></textarea><button class="gbtn" onclick="parseFin()">Anadir</button><p class="note">Palabras como cobrado, ingreso o nomina lo marcan como ingreso. El resto son gastos.</p>';
+h+='<div class="saldo"><div class="k">Neto de '+mA+'</div><div class="n">'+eur(neto)+'</div><div class="s">'+eur(ing)+' de ingresos, '+eur(gas)+' de gastos</div></div>';
+h+='<div class="kpi">';
+h+='<div class="c"><div class="k">Gastos fijos</div><div class="n">'+fij.toFixed(0)+'</div><div class="s">de '+gas.toFixed(0)+' totales</div></div>';
+h+='<div class="c"><div class="k">Mes anterior</div><div class="n">'+gAnt.toFixed(0)+'</div><div class="s">gasto total</div></div>';
+h+='</div>';
+var cats=porCategoria(mA);
+if(cats.length){h+='<h2>Por categoria</h2><table class="tb">';
+for(i=0;i<cats.length;i++){var pct=gas?Math.round(cats[i][1]/gas*100):0;
+h+='<tr><td>'+cats[i][0]+'</td><td class="r">'+eur(cats[i][1])+' <span style="color:#999">'+pct+'%</span></td></tr>'}
+h+='</table>'}
+h+='<h2>Movimientos</h2>';
+var vistos=0;
+for(i=0;i<S.fin.length&&vistos<40;i++){var f=S.fin[i];vistos++;
+h+='<div class="mov"><span class="x" onclick="borrarFin('+f.id+')">x</span><span class="i '+(f.tipo==='ingreso'?'in':'g')+'">'+(f.tipo==='ingreso'?'+':'-')+parseFloat(f.importe).toFixed(2)+'</span><div class="c">'+f.concepto+'</div><div class="f">'+f.fecha+' · '+f.categoria+' · <span onclick="togFijo('+f.id+')" style="border-bottom:1px solid #ccc">'+(f.fijo?'fijo':'variable')+'</span></div><div class="cl"></div></div>'}
+if(!S.fin.length)h+='<p class="note">Sin movimientos todavia.</p>';
+h+='<p class="note">Toca fijo o variable para cambiarlo. Los fijos son los que se repiten cada mes: alquiler, suscripciones, gimnasio.</p>'}
+if(tab==='not'){
+h+='<h2>Nueva nota</h2><textarea id="notain" placeholder="Lo que sea: una idea, una decision, como ha ido el dia"></textarea><button class="gbtn" onclick="guardarNota()">Guardar</button><p class="note">Toca el campo y usa el microfono del teclado para dictarla.</p>';
+h+='<h2>Historico</h2>';
+if(!S.notas.length)h+='<p class="note">Sin notas todavia.</p>';
+for(i=0;i<S.notas.length;i++){var n=S.notas[i];
+h+='<div class="nota"><span class="x" onclick="borrarNota('+n.id+')">x</span><div class="f">'+n.fecha+'</div><div class="t">'+n.texto.split('<').join('&lt;')+'</div></div>'}}
 if(tab==='dash'){
 var a7=adher(7),a28=adher(28);
 var t7=painAvg(7,'tibia'),t28=painAvg(28,'tibia'),trend='';
@@ -298,12 +403,12 @@ var L=lectura();
 for(i=0;i<L.length;i++)h+='<p>'+L[i]+'</p>';
 h+='</div>';
 h+='<h2>Numeros</h2><div class="kpi">';
-h+='<div class="c"><div class="k">Adherencia 7 dias</div><div class="n">'+a7+'%</div><div class="s">28 dias: '+a28+'%</div></div>';
+h+='<div class="c"><div class="k">Adherencia 7d</div><div class="n">'+a7+'%</div><div class="s">28 dias: '+a28+'%</div></div>';
 h+='<div class="c"><div class="k">Peso medio 7d</div><div class="n">'+(pesoUlt(7)===null?'-':pesoUlt(7))+'</div><div class="s">28 dias: '+(pesoUlt(28)===null?'-':pesoUlt(28))+' kg</div></div>';
-h+='<div class="c"><div class="k">Sesiones</div><div class="n">'+sesiones()+'</div><div class="s">completadas</div></div>';
-h+='<div class="c"><div class="k">Series en gym</div><div class="n">'+totalSeries()+'</div><div class="s">'+seriesUlt7()+' en 7 dias</div></div>';
 h+='<div class="c"><div class="k">Dolor tibial 7d</div><div class="n">'+(t7===null?'-':t7)+'</div><div class="s">28 dias: '+(t28===null?'-':t28)+(trend?' · '+trend:'')+'</div></div>';
-h+='<div class="c"><div class="k">Cargas al alza</div><div class="n">'+subiendoCargas()+'</div><div class="s">ejercicios</div></div>';
+h+='<div class="c"><div class="k">Series en gym</div><div class="n">'+S.gym.length+'</div><div class="s">'+seriesUlt7()+' en 7 dias</div></div>';
+h+='<div class="c"><div class="k">Neto del mes</div><div class="n">'+(sumaMes(mesActual(),'ingreso')-sumaMes(mesActual(),'gasto')).toFixed(0)+'</div><div class="s">euros</div></div>';
+h+='<div class="c"><div class="k">Sesiones</div><div class="n">'+sesiones()+'</div><div class="s">completadas</div></div>';
 h+='</div>';
 h+='<h2>Adherencia por semana</h2><div class="bars">';
 var wk=[],ws,wt,x;
@@ -313,30 +418,22 @@ h+='</div><div class="lbl">';
 for(i=8;i>=1;i--)h+='<span>'+(weekNum()-i+1>0?'S'+(weekNum()-i+1):'')+'</span>';
 h+='</div>';
 h+='<h2>Dolor tibial - 28 dias</h2><div class="spark">';
-for(i=27;i>=0;i--){var rr=dOff(i),pv2=rr&&rr.pain.tibia!=null?rr.pain.tibia:null;
+for(i=27;i>=0;i--){var rr=dOff(i),pv2=rr&&rr.dolor.tibia!=null?rr.dolor.tibia:null;
 h+='<div class="b" style="height:'+(pv2===null?0:Math.max(pv2*10,3))+'%"></div>'}
 h+='</div><p class="note">Cada barra es un dia. Barra vacia = sin registrar.</p>';
-h+='<h2>Progreso del plan</h2><div class="prog"><i style="width:'+Math.min(Math.round(dayNum()/126*100),100)+'%"></i></div><p class="note">Dia '+dayNum()+' de 126. '+phase()+'.</p>';
-h+='<h2>Ultimos 7 dias</h2><div class="wk">';var nm=['D','L','M','X','J','V','S'];
-for(i=6;i>=0;i--){var dd=new Date();dd.setDate(dd.getDate()-i);var rec=data.days[iso(dd)],done=doneCount(rec);
-var pv=rec&&rec.pain.tibia!==undefined&&rec.pain.tibia!==null?rec.pain.tibia:'-';
-h+='<div class="d '+(i===0?'t':'')+'"><div class="n">'+nm[dd.getDay()]+'</div><div class="b"><i style="height:'+Math.round(done/DAILY.length*100)+'%"></i></div><div class="p">'+pv+'</div></div>'}
-h+='</div><p class="note">Barra: bloques completados. Numero: dolor tibial.</p>'}
-if(tab==='reg'){h+='<h2>Reglas que no se negocian</h2>';
-for(i=0;i<RULES.length;i++){h+='<div class="rule"><div class="h">'+RULES[i][0]+'</div><ul>';
-for(j=0;j<RULES[i][1].length;j++)h+='<li>'+RULES[i][1][j]+'</li>';h+='</ul></div>'}}
-if(tab==='med'){
+h+='<h2>Progreso del plan</h2><div class="prog"><i style="width:'+Math.min(Math.round(dayNum()/126*100),100)+'%"></i></div><p class="note">Dia '+dayNum()+' de 126.</p>';
 h+='<h2>Pendientes medicos</h2>';
-for(i=0;i<PENDIENTES.length;i++){var pd=PENDIENTES[i],hecho=data.pend[pd[0]];
+for(i=0;i<PENDIENTES.length;i++){var pd=PENDIENTES[i],hecho=S.pend[pd[0]];
 h+='<div class="pend '+(hecho?'ok':'')+'"><span class="x" onclick="togPend(\''+pd[0]+'\')">'+(hecho?'hecho':'marcar')+'</span><b>'+pd[1]+'</b><div style="font-size:11.5px;color:#999;margin-top:4px">'+pd[2]+'</div><div class="cl"></div></div>'}
 var WW=[4,8,12,16];h+='<h2>Tests cada 4 semanas</h2>';
 for(i=0;i<WW.length;i++){h+='<div class="rule"><div class="h">Semana '+WW[i]+(weekNum()===WW[i]?' - toca ahora':'')+'</div><div style="padding:0 13px 8px">';
-for(j=0;j<METRICS.length;j++){var mv=(data.metrics[WW[i]]&&data.metrics[WW[i]][METRICS[j][0]])||'';
+for(j=0;j<METRICS.length;j++){var mv=(S.tests[WW[i]]&&S.tests[WW[i]][METRICS[j][0]])||'';
 h+='<div class="m"><label>'+METRICS[j][1]+' ('+METRICS[j][2]+')</label><input type="number" value="'+mv+'" onchange="setM('+WW[i]+',\''+METRICS[j][0]+'\',this.value)"><div class="cl"></div></div>'}
 h+='</div></div>'}
-h+='<p class="note">Si entre plancha lateral izquierda y derecha hay mas de un 20% de diferencia, anade una serie extra al lado debil hasta igualar.</p><h2>Copia de seguridad</h2><div class="nav"><button onclick="exportar()">Exportar</button><button onclick="importar()">Importar</button></div><p class="note">Los datos viven solo en este navegador. Exporta cada domingo y pega el texto en Notas: si borras el historial o cambias de movil, los pierdes.</p>'}
+h+='<p class="note">Tus datos estan en Supabase, no en el movil. Puedes entrar desde cualquier dispositivo y siguen ahi.</p>'}
 r.innerHTML=h}
-load();draw();
+estado('Cargando datos');
+cargar().then(function(){estado('');draw()})['catch'](function(e){estado('No se pudo conectar con la base de datos',1);console.error(e);document.getElementById('root').innerHTML='<p style="padding:40px 0;color:#666">No se pudo conectar. Revisa la conexion y recarga.</p>'});
 </script>
 </body>
 </html>
