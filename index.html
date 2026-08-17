@@ -437,3 +437,38 @@ cargar().then(function(){estado('');draw()})['catch'](function(e){estado('No se 
 </script>
 </body>
 </html>
+
+<style>
+/* Escritorio: aprovecha el ancho, dos columnas */
+@media (min-width: 900px){
+  body{padding:0 32px 60px}
+  .w{max-width:1100px}
+  .hd{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px}
+  .hd > div:first-of-type{flex:1}
+  .big{font-size:64px}
+  .nav{max-width:560px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 34px;align-items:start}
+  .kpi .c{flex:1 1 30%}
+  .foco li{font-size:14.5px}
+  .it{padding:14px 16px}
+  .it .l{font-size:15px}
+  .sc button{height:34px;font-size:12px}
+  .bars{height:120px}
+  .spark{height:80px}
+  .saldo .n{font-size:46px}
+  textarea{min-height:96px}
+  .mov{padding:14px 0}
+  .nota .t{font-size:15px}
+}
+@media (min-width: 1300px){
+  .w{max-width:1240px}
+}
+/* Movil: mas aire para el pulgar */
+@media (max-width: 400px){
+  body{padding:0 14px 80px}
+  .big{font-size:46px}
+  .nav button{font-size:9px;padding:12px 0}
+  .sc button{height:32px}
+  .it{padding:13px 12px}
+}
+</style>
