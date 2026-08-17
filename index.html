@@ -23,6 +23,12 @@ body{margin:0;padding:0 18px 70px;background:#fff;color:#111;font-family:-apple-
 .nav button{flex:1;background:#fff;border:1px solid #ddd;color:#888;font-size:10px;text-transform:uppercase;letter-spacing:.3px;padding:11px 1px;font-family:inherit}
 .nav button.on{border-color:#111;background:#111;color:#fff}
 h2{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;font-weight:600;margin:26px 0 10px}
+.foco{border:2px solid #111;padding:14px 15px;margin-bottom:14px}
+.foco .t{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:10px}
+.foco ol{margin:0;padding-left:18px}
+.foco li{font-size:13.5px;line-height:1.5;margin-bottom:8px}
+.foco li:last-child{margin-bottom:0}
+.foco li b{font-weight:700}
 .it{border:1px solid #eee;border-left:3px solid #eee;padding:12px 13px;margin-bottom:6px}
 .it.on{border-color:#111;border-left-color:#111;background:#111;color:#fff}
 .it .l{font-size:14px}
@@ -71,6 +77,10 @@ h2{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;font-
 .kpi .k{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#999;margin-bottom:6px}
 .kpi .n{font-size:30px;font-weight:800;letter-spacing:-1px;line-height:1}
 .kpi .s{font-size:11px;color:#888;margin-top:4px}
+.lect{border-left:3px solid #111;padding:2px 0 2px 13px;margin:10px 0 0}
+.lect p{font-size:13.5px;line-height:1.6;margin:0 0 9px}
+.lect p:last-child{margin-bottom:0}
+.lect b{font-weight:700}
 .bars{display:flex;align-items:flex-end;gap:4px;height:90px;border-bottom:1px solid #111;margin-bottom:6px}
 .bars .b{flex:1;background:#111;min-height:1px}
 .bars .b.e{background:#e8e8e8}
@@ -101,7 +111,7 @@ var EJ_AM=[['Respiracion 90/90','5 respiraciones lentas','https://www.youtube.co
 var EJ_PIE=[['Elevacion talon SENTADO','3 x 10, tempo 3-1-3. El mas importante','https://www.youtube.com/watch?v=ORY-ke6vcgk'],['Isometrico de soleo','3 x 45 s, rodilla flexionada','https://www.sportsinjuryclinic.net/rehabilitation-exercises/bent-knee-calf-holds'],['Elevacion talon de pie','3 x 12, en escalon','https://www.thephysiobot.com/single-leg-bent-knee-calf-raise/'],['Tibialis raise','3 x 20 en pared','https://www.youtube.com/watch?v=nQKgHwi8W9E'],['Tibial posterior / arco','3 x 12, pelota entre talones','https://www.youtube.com/watch?v=FiQ610bFuNw'],['Arco corto (short foot)','3 x 10, sostener 5 s',Y+'short+foot+exercise+flat+feet'],['Inversion y eversion con banda','3 x 15 cada una',Y+'resisted+ankle+inversion+eversion+band'],['Equilibrio monopodal','3 x 30 s, ojos cerrados','']];
 var EJ_CODO=[['Isometrico triceps a 90','5 x 30 s, nunca extension completa',Y+'isometric+triceps+hold+90+degrees'],['Flexion de muneca','3 x 12, tempo 3-1-3',Y+'dumbbell+wrist+flexion+forearm'],['Pronacion con martillo','3 x 12 por lado',Y+'hammer+pronation+supination+forearm'],['Agarre / farmer','3 x 30 s',Y+'farmer+carry+grip'],['Rotacion externa con banda','3 x 15','https://www.youtube.com/watch?v=_UvmPNGtlPM'],['Wall slide / push-up plus','3 x 10',Y+'wall+slide+serratus'],['Y-T-W boca abajo','2 x 8 cada letra',Y+'prone+Y+T+W+shoulder'],['Deslizamiento nervio cubital','2 x 6 MUY suave. Para si aumenta el hormigueo',Y+'ulnar+nerve+glide']];
 var EJ_FLEX={1:[['Isquios tumbado con banda','2 x 45 s por pierna',Y+'hamstring+stretch+band+supine'],['Psoas en media rodilla','2 x 45 s por lado',Y+'couch+stretch+hip+flexor'],['Cuadriceps de pie','2 x 45 s por lado',Y+'standing+quad+stretch'],['Aductores en rana','2 x 60 s',Y+'frog+stretch+adductors']],2:[['Gemelo en pared, rodilla recta','2 x 45 s',Y+'gastrocnemius+wall+stretch'],['Soleo en pared, rodilla flexionada','2 x 45 s',Y+'soleus+stretch+bent+knee'],['Fascia plantar con pelota','60 s por pie',Y+'plantar+fascia+ball+release'],['Tibial anterior arrodillado','2 x 45 s',Y+'tibialis+anterior+stretch+kneeling']],3:[['Pectoral en marco de puerta','2 x 45 s por lado',Y+'doorway+pec+stretch'],['Dorsal','2 x 45 s',Y+'lat+stretch+bench'],['Toracica sobre rodillo','60 s',Y+'thoracic+extension+foam+roller'],['Triceps por encima cabeza','2 x 30 s. Suave, ojo con el codo',Y+'overhead+triceps+stretch']],4:[['90/90 sentado','2 x 45 s por lado','https://jackhanrahanfitness.com/learn-the-90-90-stretch-eliminate-tight-hips/'],['Paloma o figura-4','2 x 45 s por lado',Y+'figure+4+stretch+piriformis'],['Mariposa','2 x 60 s',Y+'butterfly+stretch'],['Rotacion interna cadera','2 x 45 s por lado',Y+'hip+internal+rotation+stretch']],5:[['Bisagra de pie, espalda larga','2 x 45 s',Y+'hip+hinge+hamstring+stretch'],['Isquios en escalon','2 x 45 s por pierna',Y+'hamstring+stretch+step'],['Gato-camello','10 ciclos lentos',Y+'cat+camel+exercise'],['Cadena posterior con banda','2 x 45 s por pierna',Y+'supine+hamstring+band+stretch']],6:[['Repaso: una postura de cada dia','8-10 min','']],0:[['Sesion larga: repasa todo','20-25 min, sin prisa','']]};
-var EJ_SES={1:[['Sentadilla trasera','4 x 5, RPE 7-8',Y+'back+squat+tecnica'],['Bulgara con mancuernas','3 x 8 por pierna',Y+'bulgarian+split+squat+tecnica'],['Curl nordico (progresion)','3 x 5, empieza excentrico asistido',Y+'nordic+hamstring+curl+progression'],['Hip thrust','3 x 8',Y+'hip+thrust+tecnica'],['Copenhagen plank','3 x 20 s por lado',Y+'copenhagen+plank+progression'],['Ab wheel o dead bug lastrado','3 x 8',Y+'ab+wheel+rollout'],['Bird dog','3 x 8 por lado, pausa 3 s',Y+'bird+dog+exercise']],3:[['Press banca con mancuernas','4 x 6',Y+'dumbbell+bench+press'],['Dominadas','4 x (maximo menos 2)',Y+'pull+up+tecnica'],['Press militar','3 x 8',Y+'overhead+press+tecnica'],['Remo con barra','3 x 10',Y+'barbell+row+tecnica'],['Face pull','3 x 15',Y+'face+pull+tecnica'],['Curl biceps excentrico','3 x 10, 3 s de bajada, sin estirar del todo',Y+'eccentric+bicep+curl+tempo'],['Pallof press','3 x 10 por lado',Y+'pallof+press+anti+rotation']],5:[['Peso muerto rumano','4 x 6',Y+'romanian+deadlift+tecnica'],['Sentadilla frontal o hack','3 x 8',Y+'front+squat+tecnica'],['Zancadas caminando','3 x 10 por pierna',Y+'walking+lunges+tecnica'],['Elevacion talon pesada de pie','4 x 8','https://www.youtube.com/watch?v=ORY-ke6vcgk'],['Suitcase carry','3 x 30 m por lado',Y+'suitcase+carry'],['Plancha lateral','3 x maximo por lado. Cronometra ambos',Y+'side+plank'],['Extensiones lumbares','3 x 12',Y+'back+extension+roman+chair']],2:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa que marque la cabecera',''],['Maximo 60 min','Y paras si aparece hormigueo o dolor tibial','']],4:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa que marque la cabecera',''],['Maximo 60 min','Y paras si aparece hormigueo o dolor tibial','']],6:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa que marque la cabecera',''],['Maximo 60 min','Y paras si aparece hormigueo o dolor tibial','']],0:[['Descanso','Sin fuerza ni baloncesto. Solo flexibilidad larga','']]};
+var EJ_SES={1:[['Sentadilla trasera','4 x 5, RPE 7-8',Y+'back+squat+tecnica'],['Bulgara con mancuernas','3 x 8 por pierna',Y+'bulgarian+split+squat+tecnica'],['Curl nordico (progresion)','3 x 5, empieza excentrico asistido',Y+'nordic+hamstring+curl+progression'],['Hip thrust','3 x 8',Y+'hip+thrust+tecnica'],['Copenhagen plank','3 x 20 s por lado',Y+'copenhagen+plank+progression'],['Ab wheel o dead bug lastrado','3 x 8',Y+'ab+wheel+rollout'],['Bird dog','3 x 8 por lado, pausa 3 s',Y+'bird+dog+exercise']],3:[['Press banca con mancuernas','4 x 6',Y+'dumbbell+bench+press'],['Dominadas','4 x (maximo menos 2)',Y+'pull+up+tecnica'],['Press militar','3 x 8',Y+'overhead+press+tecnica'],['Remo con barra','3 x 10',Y+'barbell+row+tecnica'],['Face pull','3 x 15',Y+'face+pull+tecnica'],['Curl biceps excentrico','3 x 10, 3 s bajada, sin estirar del todo',Y+'eccentric+bicep+curl+tempo'],['Pallof press','3 x 10 por lado',Y+'pallof+press+anti+rotation']],5:[['Peso muerto rumano','4 x 6',Y+'romanian+deadlift+tecnica'],['Sentadilla frontal o hack','3 x 8',Y+'front+squat+tecnica'],['Zancadas caminando','3 x 10 por pierna',Y+'walking+lunges+tecnica'],['Elevacion talon pesada de pie','4 x 8','https://www.youtube.com/watch?v=ORY-ke6vcgk'],['Suitcase carry','3 x 30 m por lado',Y+'suitcase+carry'],['Plancha lateral','3 x maximo por lado. Cronometra ambos',Y+'side+plank'],['Extensiones lumbares','3 x 12',Y+'back+extension+roman+chair']],2:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa de la cabecera',''],['Maximo 60 min','Paras si aparece hormigueo o dolor tibial','']],4:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa de la cabecera',''],['Maximo 60 min','Paras si aparece hormigueo o dolor tibial','']],6:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa de la cabecera',''],['Maximo 60 min','Paras si aparece hormigueo o dolor tibial','']],0:[['Descanso','Sin fuerza ni baloncesto. Solo flexibilidad larga','']]};
 var EJ_PROT=[['Proteina en cada comida','Tamano de tu palma. Es la unica variable que importa',''],['Post-entreno','Platano, yogur griego, batido, fruta con frutos secos',''],['Antes de jugar','Carbohidrato si. No es una concesion, es combustible','']];
 var EJ_SUEN=[['8 horas','Dos noches seguidas bajo 6 h: el dia de fuerza pasa a movilidad',''],['Codo estirado al dormir','Evita dormir con el brazo muy doblado','']];
 var EJ_CREA=[['5 g al dia','Cualquier hora, con agua. Sin fase de carga',''],['Aviso','Subiras 1-2 kg de agua las primeras semanas. No toques nada por eso','']];
@@ -137,6 +147,7 @@ function adher(n){var s=0,t=0,i,lim=Math.min(n,dayNum());for(i=0;i<lim;i++){s+=d
 function racha(){var c=0,i;for(i=0;i<400;i++){if(doneCount(dOff(i))>=7)c++;else{if(i===0)continue;break}}return c}
 function painAvg(n,id){var v=[],i,r;for(i=0;i<n;i++){r=dOff(i);if(r&&r.pain[id]!==null&&r.pain[id]!==undefined)v.push(r.pain[id])}if(!v.length)return null;var s=0;for(i=0;i<v.length;i++)s+=v[i];return Math.round(s/v.length*10)/10}
 function sesiones(){var c=0,k;for(k in data.days)if(data.days[k].done.ses)c++;return c}
+function hormigueoReciente(){var i,r;for(i=0;i<7;i++){r=dOff(i);if(r&&r.tingle)return true}return false}
 function gymDia(){var k=tk();if(!data.gym[k])data.gym[k]=[];return data.gym[k]}
 function delSet(i){gymDia().splice(i,1);save();draw()}
 function parseDic(){
@@ -167,14 +178,50 @@ return null}
 function mejor(nom){var b=null,k,i;for(k in data.gym)for(i=0;i<data.gym[k].length;i++){var s=data.gym[k][i];if(s.e===nom&&s.w!=null&&(b===null||s.w>b))b=s.w}return b}
 function usados(){var out=[],k,i;for(k in data.gym)for(i=0;i<data.gym[k].length;i++){var e=data.gym[k][i].e;if(out.indexOf(e)<0)out.push(e)}out.sort();return out}
 function totalSeries(){var c=0,k;for(k in data.gym)c+=data.gym[k].length;return c}
+function subiendoCargas(){var us=usados(),n=0,i;for(i=0;i<us.length;i++){var u=ultimo(us[i]),a=anterior(us[i]);if(u&&a!=null&&u.w>a)n++}return n}
+function seriesUlt7(){var c=0,i;for(i=0;i<7;i++){var d=new Date();d.setDate(d.getDate()-i);var g=data.gym[iso(d)];if(g)c+=g.length}return c}
+function foco(){
+var f=[],d=today(),w=weekNum(),dow=new Date().getDay();
+var t2=painAvg(2,'tibia'),t7=painAvg(7,'tibia'),t28=painAvg(28,'tibia');
+if(d.tingle||hormigueoReciente())f.push('<b>Codo en retroceso.</b> Bajas una etapa de tiro esta semana. No provoques el chasquido ni para comprobarlo.');
+if(t2!==null&&t2>3)f.push('<b>Tibia cargada.</b> Manana menos 20% de volumen en pierna y cero impacto extra.');
+if(w%4===0)f.push('<b>Semana de descarga.</b> Volumen al 60%, intensidad igual. Encontrarte bien es la senal de que hace falta, no de que sobra.');
+if(!d.done.pie)f.push('<b>Protocolo pie-tibia.</b> Es el bloque que trata la lesion. Si hoy solo haces una cosa, que sea el gemelo sentado.');
+if(dow===1||dow===3||dow===5){if(!d.done.ses)f.push('<b>'+SES[dow][0]+'.</b> Tres series por ejercicio, 2 repeticiones en reserva. Nada de bloquear el codo.')}
+else if(dow===0){f.push('<b>Descanso.</b> Sin fuerza ni baloncesto. Solo flexibilidad larga.')}
+else{if(!d.done.ses)f.push('<b>Baloncesto, maximo 60 min.</b> '+stage()+'. Paras si aparece hormigueo o dolor tibial.')}
+if(w<5)f.push('<b>Sin pliometria ni saltos.</b> Entra en la semana 5 y solo si el dolor tibial esta estable en 2 o menos.');
+if(!d.done.suen)f.push('<b>Dormir 8 h.</b> Es la herramienta de recuperacion mas potente que tienes y la primera que se sacrifica.');
+if(adher(7)<60&&dayNum()>7)f.push('<b>La adherencia esta floja.</b> Prioriza AM, pie-tibia y sueno. Lo demas es secundario esta semana.');
+return f.slice(0,4)}
+function lectura(){
+var L=[],a7=adher(7),a28=adher(28),rc=racha(),w=weekNum();
+var t7=painAvg(7,'tibia'),t28=painAvg(28,'tibia');
+if(dayNum()<4){L.push('Llevas <b>'+dayNum()+' dia'+(dayNum()>1?'s':'')+'</b>. Todavia no hay datos suficientes para leer nada. Vuelve a mirar esta pantalla el dia 7.');return L}
+var cal=a7>=95?'excelente':a7>=80?'solida':a7>=60?'irregular':'floja';
+L.push('Adherencia de <b>'+a7+'%</b> en 7 dias: <b>'+cal+'</b>. '+(a7>=80?'Ese es el nivel que hace que el plan funcione.':a7>=60?'Por debajo del 80% el estimulo se diluye. Recorta bloques antes que hacerlos a medias.':'Ahora mismo el plan no se esta ejecutando. Reduce a tres bloques al dia y consolida eso.'));
+if(a28>0&&Math.abs(a7-a28)>=8)L.push(a7>a28?'Vas <b>mejorando</b>: la semana esta '+(a7-a28)+' puntos por encima de tu media de 28 dias.':'Has <b>bajado</b> '+(a28-a7)+' puntos respecto a tu media de 28 dias. Suele ser la senal de que el volumen es mas de lo que puedes sostener.');
+if(t7!==null&&t28!==null){
+if(t7<t28-0.2)L.push('Dolor tibial <b>bajando</b> ('+t7+' frente a '+t28+' de media mensual). Es la senal de que la tibia esta ganando capacidad. Mantén el protocolo, no lo aceleres.');
+else if(t7>t28+0.2)L.push('Dolor tibial <b>subiendo</b> ('+t7+' frente a '+t28+'). No avances de fase esta semana aunque toque por calendario. Revisa el volumen de impacto de los ultimos 7 dias.');
+else L.push('Dolor tibial <b>estable</b> en '+t7+'. Estable no es fracaso: en una lesion de cuatro anos, no empeorar mientras subes carga ya es progreso.');
+}else if(t7!==null)L.push('Dolor tibial medio de <b>'+t7+'</b> esta semana. Necesito cuatro semanas de registro para darte una tendencia real.');
+else L.push('<b>Sin datos de dolor.</b> Es el numero mas importante del plan: sin el no se puede decidir si avanzas de fase. Apuntalo cada manana al levantarte.');
+if(rc>=7)L.push('Racha de <b>'+rc+' dias</b>. La constancia ya no es el problema; a partir de aqui el limite es la recuperacion.');
+else if(rc>0)L.push('Racha de <b>'+rc+' dia'+(rc>1?'s':'')+'</b>. Cuenta un dia cuando completas 7 de los 9 bloques.');
+var s7=seriesUlt7(),sub=subiendoCargas();
+if(s7===0&&w>1)L.push('<b>Sin series de gimnasio registradas</b> esta semana. Sin ese dato no puedo decirte si la fuerza sube.');
+else if(s7>0)L.push('<b>'+s7+' series</b> registradas en 7 dias'+(sub>0?', y <b>'+sub+' ejercicio'+(sub>1?'s han subido':' ha subido')+'</b> de carga respecto a la vez anterior.':'. Cuando repitas ejercicio veras si la carga sube.'));
+var prox=w<5?'La pliometria entra en la semana 5.':w<7?'La etapa 4 de tiro entra en la semana 7.':'';
+var falta=(4-(w%4))%4;
+L.push('Vas por el <b>dia '+dayNum()+' de 126</b>, '+phase().toLowerCase()+'. '+(falta===0?'Esta semana toca test de medidas.':'Siguiente test de medidas en '+falta+' semana'+(falta>1?'s':'')+'.')+' '+prox);
+return L}
 function alerts(){var out=[],d=today(),i,k;
 if(d.tingle)out.push([1,'Hormigueo registrado','Retrocede una etapa de tiro durante una semana. Nada de provocar el chasquido.']);
 var ks=[];for(k in data.days)ks.push(k);ks.sort();var l2=[];
 for(i=Math.max(0,ks.length-2);i<ks.length;i++){var p=data.days[ks[i]].pain.tibia;if(p!==null&&p!==undefined)l2.push(p)}
-if(l2.length===2&&l2[0]>3&&l2[1]>3)out.push([1,'Tibia sobre 3 dos dias','Baja el volumen un 20% en la proxima sesion de pierna. No avances de fase aunque toque por calendario.']);
+if(l2.length===2&&l2[0]>3&&l2[1]>3)out.push([1,'Tibia sobre 3 dos dias','Baja el volumen un 20% en la proxima sesion de pierna.']);
 if(d.pain.codoP>3)out.push([1,'Codo sobre 3','Fuera extensiones, fondos y flexiones con bloqueo. Isometricos a 90 grados y nada mas.']);
-if(weekNum()%4===0)out.push([1,'Semana de descarga','Volumen al 60%, intensidad igual. Si te encuentras genial y quieres saltartela, esa es la senal de que hace falta.']);
-if(weekNum()<=4)out.push([0,'Fase de base','Sin pliometria, sin saltos, sin cargas maximas. Entra en semana 5 solo si el dolor tibial lleva estable en 2 o menos.']);
 return out}
 function draw(){var r=document.getElementById('root'),h='',i,j;
 if(!data.start){r.innerHTML='<div class="start"><p class="eye">Plan fisico - 3x3</p><p style="color:#666;font-size:14px">El plan arranca el dia que lo marques.<br>126 dias hasta el final de la fase 4.</p><button onclick="begin()">Empezar hoy</button></div>';return}
@@ -183,8 +230,13 @@ var meses=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','se
 var dias=['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
 h+='<div class="hd"><p class="eye">Plan fisico - 3x3</p><span class="big">'+dayNum()+'</span> <span class="of">/ 126 dias</span><div><span class="tag">Semana '+weekNum()+'</span><span class="tag">'+phase()+'</span><span class="tag">'+stage()+'</span>'+(weekNum()%4===0?'<span class="tag hot">Descarga</span>':'')+'</div><div class="dt">'+dias[nd.getDay()]+' '+nd.getDate()+' de '+meses[nd.getMonth()]+'</div></div>';
 h+='<div class="nav"><button class="'+(tab==='hoy'?'on':'')+'" onclick="go(\'hoy\')">Hoy</button><button class="'+(tab==='gym'?'on':'')+'" onclick="go(\'gym\')">Gym</button><button class="'+(tab==='dash'?'on':'')+'" onclick="go(\'dash\')">Panel</button><button class="'+(tab==='reg'?'on':'')+'" onclick="go(\'reg\')">Reglas</button><button class="'+(tab==='med'?'on':'')+'" onclick="go(\'med\')">Tests</button></div>';
-if(tab==='hoy'){var A=alerts();
-for(i=0;i<A.length;i++)h+='<div class="al '+(A[i][0]?'k':'')+'"><b>'+A[i][1]+'</b>'+A[i][2]+'</div>';
+if(tab==='hoy'){
+var F=foco();
+h+='<div class="foco"><div class="t">Lo importante de hoy</div><ol>';
+for(i=0;i<F.length;i++)h+='<li>'+F[i]+'</li>';
+h+='</ol></div>';
+var A=alerts();
+for(i=0;i<A.length;i++)h+='<div class="al k"><b>'+A[i][1]+'</b>'+A[i][2]+'</div>';
 h+='<h2>Bloques del dia &nbsp;&nbsp; '+doneCount(d)+'/'+DAILY.length+'</h2>';
 for(i=0;i<DAILY.length;i++){var id=DAILY[i][0];var lab=(id==='ses')?SES[dow][0]:DAILY[i][1];var det=DAILY[i][2];
 h+='<div class="it '+(d.done[id]?'on':'')+'" onclick="tog(\''+id+'\')"><span class="gia" onclick="event.stopPropagation();togG(\''+id+'\')">'+(openG[id]?'cerrar':'ver')+'</span><div class="ck">X</div><div class="l">'+lab+'</div>'+(det?'<div class="d">'+det+'</div>':'')+'<div class="cl"></div></div>';
@@ -201,7 +253,7 @@ if(tab==='gym'){
 h+='<h2>Registrar por voz o texto</h2>';
 h+='<textarea id="dic" placeholder="sentadilla 80 4x5, bulgara 24 3x8, gemelo sentado 40 3x10"></textarea>';
 h+='<button class="gbtn" onclick="parseDic()">Anadir al registro</button>';
-h+='<p class="note">En el iPhone: toca el campo, pulsa el microfono del teclado y dilo en voz alta. Formato: ejercicio, peso, series por repeticiones.</p>';
+h+='<p class="note">En el iPhone: toca el campo, pulsa el microfono del teclado y dilo en voz alta.</p>';
 var g=gymDia();
 h+='<h2>Hoy &nbsp;&nbsp; '+g.length+' series</h2>';
 if(!g.length)h+='<p class="note">Sin registros hoy.</p>';
@@ -214,16 +266,22 @@ else{h+='<table class="tb"><tr><th>Ejercicio</th><th style="text-align:right">Ul
 for(i=0;i<us.length;i++){var u=ultimo(us[i]),a=anterior(us[i]),b=mejor(us[i]);
 var dif='';if(u&&a!=null){var df=Math.round((u.w-a)*10)/10;if(df>0)dif=' <span class="up">+'+df+'</span>';else if(df<0)dif=' <span style="color:#999">'+df+'</span>'}
 h+='<tr><td>'+us[i]+'</td><td class="r">'+(u?u.w+' kg'+dif:'-')+'</td><td class="r">'+(b!=null?b+' kg':'-')+'</td></tr>'}
-h+='</table><p class="note">El numero en negrita es la diferencia con la vez anterior. Sube peso solo cuando completes todas las series limpias con 2 repeticiones en reserva: 2,5 kg arriba, 5 kg abajo.</p>'}}
+h+='</table><p class="note">Sube peso solo cuando completes todas las series limpias con 2 repeticiones en reserva: 2,5 kg arriba, 5 kg abajo.</p>'}}
 if(tab==='dash'){
-var a7=adher(7),a28=adher(28),aT=adher(400),rc=racha();
+var a7=adher(7),a28=adher(28),rc=racha();
 var t7=painAvg(7,'tibia'),t28=painAvg(28,'tibia'),trend='';
 if(t7!==null&&t28!==null){if(t7<t28-0.2)trend='bajando';else if(t7>t28+0.2)trend='subiendo';else trend='estable'}
-h+='<h2>Disciplina</h2><div class="kpi">';
+h+='<h2>Lectura</h2><div class="lect">';
+var L=lectura();
+for(i=0;i<L.length;i++)h+='<p>'+L[i]+'</p>';
+h+='</div>';
+h+='<h2>Numeros</h2><div class="kpi">';
 h+='<div class="c"><div class="k">Adherencia 7 dias</div><div class="n">'+a7+'%</div><div class="s">28 dias: '+a28+'%</div></div>';
 h+='<div class="c"><div class="k">Racha</div><div class="n">'+rc+'</div><div class="s">dias seguidos</div></div>';
 h+='<div class="c"><div class="k">Sesiones</div><div class="n">'+sesiones()+'</div><div class="s">completadas</div></div>';
-h+='<div class="c"><div class="k">Series en gym</div><div class="n">'+totalSeries()+'</div><div class="s">registradas</div></div>';
+h+='<div class="c"><div class="k">Series en gym</div><div class="n">'+totalSeries()+'</div><div class="s">'+seriesUlt7()+' en 7 dias</div></div>';
+h+='<div class="c"><div class="k">Dolor tibial 7d</div><div class="n">'+(t7===null?'-':t7)+'</div><div class="s">28 dias: '+(t28===null?'-':t28)+(trend?' · '+trend:'')+'</div></div>';
+h+='<div class="c"><div class="k">Cargas al alza</div><div class="n">'+subiendoCargas()+'</div><div class="s">ejercicios</div></div>';
 h+='</div>';
 h+='<h2>Adherencia por semana</h2><div class="bars">';
 var wk=[],ws,wt,x;
@@ -235,7 +293,7 @@ h+='</div>';
 h+='<h2>Dolor tibial - 28 dias</h2><div class="spark">';
 for(i=27;i>=0;i--){var rr=dOff(i),pv2=rr&&rr.pain.tibia!=null?rr.pain.tibia:null;
 h+='<div class="b" style="height:'+(pv2===null?0:Math.max(pv2*10,3))+'%"></div>'}
-h+='</div><p class="note">Media 7 dias: '+(t7===null?'sin datos':t7)+' &nbsp;|&nbsp; media 28 dias: '+(t28===null?'sin datos':t28)+(trend?' &nbsp;|&nbsp; '+trend:'')+'</p>';
+h+='</div><p class="note">Cada barra es un dia. Barra vacia = sin registrar.</p>';
 h+='<h2>Progreso del plan</h2><div class="prog"><i style="width:'+Math.min(Math.round(dayNum()/126*100),100)+'%"></i></div><p class="note">Dia '+dayNum()+' de 126. '+phase()+'.</p>';
 h+='<h2>Ultimos 7 dias</h2><div class="wk">';var nm=['D','L','M','X','J','V','S'];
 for(i=6;i>=0;i--){var dd=new Date();dd.setDate(dd.getDate()-i);var rec=data.days[iso(dd)],done=doneCount(rec);
