@@ -30,7 +30,15 @@ h2{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:#888;font-
 .it.on .d{color:#bbb}
 .ck{float:left;width:18px;height:18px;border:1px solid #ccc;margin-right:12px;text-align:center;line-height:17px;font-size:11px;color:transparent}
 .it.on .ck{border-color:#fff;color:#fff}
+.gia{float:right;font-size:10px;letter-spacing:1px;text-transform:uppercase;border:1px solid #ddd;padding:4px 7px;color:#888}
+.it.on .gia{border-color:#555;color:#bbb}
 .cl{clear:both}
+.guia{border:1px solid #111;border-top:none;margin:-6px 0 8px;padding:4px 13px 10px}
+.ex{border-bottom:1px solid #eee;padding:11px 0;overflow:hidden}
+.ex:last-child{border-bottom:none}
+.ex .n{font-size:13.5px}
+.ex .s{font-size:11.5px;color:#999;margin-top:2px}
+.ex a{float:right;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#111;border-bottom:1px solid #111;text-decoration:none;margin-left:10px}
 .pain{border:1px solid #eee;padding:12px 13px;margin-bottom:6px}
 .pt{overflow:hidden;margin-bottom:9px}
 .pt .n{float:left;font-size:13px}
@@ -79,19 +87,29 @@ textarea{width:100%;border:1px solid #111;padding:12px;font-family:inherit;font-
 .tb{width:100%;border-collapse:collapse;font-size:13px}
 .tb th{text-align:left;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#999;font-weight:600;padding:8px 0;border-bottom:1px solid #111}
 .tb td{padding:10px 0;border-bottom:1px solid #eee}
-.tb td.r{text-align:right;font-variant-numeric:tabular-nums}
+.tb td.r{text-align:right}
 .up{font-weight:700}
 </style>
 </head>
 <body>
 <div class="w" id="root"></div>
 <script>
-var KEY='tracker-v3',tab='hoy',data={start:null,days:{},metrics:{},gym:{}};
-var SES={1:['Sesion A - Pierna rodilla + core','Sentadilla, bulgara, nordico, hip thrust'],2:['Baloncesto','Volumen de tiro segun etapa'],3:['Sesion B - Torso + hombro','Press, dominadas, militar, remo, face pull'],4:['Baloncesto','Volumen de tiro segun etapa'],5:['Sesion C - Pierna cadera + potencia','RDL, frontal, zancadas, gemelo pesado'],6:['Baloncesto','Volumen de tiro segun etapa'],0:['Descanso','Solo flexibilidad larga, 20-25 min']};
-var DAILY=[['am','Bloque AM','12 min, movilidad sin impacto'],['pie','Protocolo pie-tibia','9 min, soleo sentado, arco, tibial'],['codo','Bloque codo-hombro','8 min, isometricos 90 grados, antebrazo'],['flex','Flexibilidad','12 min, noche, nunca antes de fuerza'],['ses','Sesion programada',''],['prot','Proteina en las 3 comidas','Palma de mano por comida'],['crea','Creatina 5 g','Cualquier hora, con agua'],['suen','Sueno 8 h','Es parte del plan, no un extra'],['azuc','Sin ultraprocesados','Fruta y carbo peri-entreno si son limpios']];
+var KEY='tracker-v3',tab='hoy',openG={},data={start:null,days:{},metrics:{},gym:{}};
+var Y='https://www.youtube.com/results?search_query=';
+var SES={1:['Sesion A - Pierna rodilla + core',''],2:['Baloncesto',''],3:['Sesion B - Torso + hombro',''],4:['Baloncesto',''],5:['Sesion C - Pierna cadera + potencia',''],6:['Baloncesto',''],0:['Descanso','']};
+var EJ_AM=[['Respiracion 90/90','5 respiraciones lentas','https://www.youtube.com/watch?v=xmDQfryw0IY'],['Knee-to-wall','2 x 10 por pierna','https://www.youtube.com/watch?v=FiQ610bFuNw'],['Transiciones 90/90 cadera','2 x 8 (si no sale: version en silla)','https://jackhanrahanfitness.com/learn-the-90-90-stretch-eliminate-tight-hips/'],['World greatest stretch','5 por lado','https://www.youtube.com/watch?v=-CiWQ2IvY34'],['Open book toracico','8 por lado','https://www.youtube.com/watch?v=rDviWORCWEw'],['Dead bug','2 x 8 por lado, lumbar pegada','https://www.youtube.com/watch?v=g_BYB0R-4Ws'],['Pull-apart con banda','15 (sin banda: toalla, isometrico 8 x 5 s)','https://www.youtube.com/watch?v=LoBBo1dtY6I'],['Rotacion externa','15 por brazo, codo pegado','https://www.youtube.com/watch?v=_UvmPNGtlPM']];
+var EJ_PIE=[['Elevacion talon SENTADO','3 x 10, tempo 3-1-3. El mas importante','https://www.youtube.com/watch?v=ORY-ke6vcgk'],['Isometrico de soleo','3 x 45 s, rodilla flexionada','https://www.sportsinjuryclinic.net/rehabilitation-exercises/bent-knee-calf-holds'],['Elevacion talon de pie','3 x 12, en escalon','https://www.thephysiobot.com/single-leg-bent-knee-calf-raise/'],['Tibialis raise','3 x 20 en pared','https://www.youtube.com/watch?v=nQKgHwi8W9E'],['Tibial posterior / arco','3 x 12, pelota entre talones','https://www.youtube.com/watch?v=FiQ610bFuNw'],['Arco corto (short foot)','3 x 10, sostener 5 s',Y+'short+foot+exercise+flat+feet'],['Inversion y eversion con banda','3 x 15 cada una',Y+'resisted+ankle+inversion+eversion+band'],['Equilibrio monopodal','3 x 30 s, ojos cerrados','']];
+var EJ_CODO=[['Isometrico triceps a 90','5 x 30 s, nunca extension completa',Y+'isometric+triceps+hold+90+degrees'],['Flexion de muneca','3 x 12, tempo 3-1-3',Y+'dumbbell+wrist+flexion+forearm'],['Pronacion con martillo','3 x 12 por lado',Y+'hammer+pronation+supination+forearm'],['Agarre / farmer','3 x 30 s',Y+'farmer+carry+grip'],['Rotacion externa con banda','3 x 15','https://www.youtube.com/watch?v=_UvmPNGtlPM'],['Wall slide / push-up plus','3 x 10',Y+'wall+slide+serratus'],['Y-T-W boca abajo','2 x 8 cada letra',Y+'prone+Y+T+W+shoulder'],['Deslizamiento nervio cubital','2 x 6 MUY suave. Para si aumenta el hormigueo',Y+'ulnar+nerve+glide']];
+var EJ_FLEX={1:[['Isquios tumbado con banda','2 x 45 s por pierna',Y+'hamstring+stretch+band+supine'],['Psoas en media rodilla','2 x 45 s por lado',Y+'couch+stretch+hip+flexor'],['Cuadriceps de pie','2 x 45 s por lado',Y+'standing+quad+stretch'],['Aductores en rana','2 x 60 s',Y+'frog+stretch+adductors']],2:[['Gemelo en pared, rodilla recta','2 x 45 s',Y+'gastrocnemius+wall+stretch'],['Soleo en pared, rodilla flexionada','2 x 45 s',Y+'soleus+stretch+bent+knee'],['Fascia plantar con pelota','60 s por pie',Y+'plantar+fascia+ball+release'],['Tibial anterior arrodillado','2 x 45 s',Y+'tibialis+anterior+stretch+kneeling']],3:[['Pectoral en marco de puerta','2 x 45 s por lado',Y+'doorway+pec+stretch'],['Dorsal','2 x 45 s',Y+'lat+stretch+bench'],['Toracica sobre rodillo','60 s',Y+'thoracic+extension+foam+roller'],['Triceps por encima cabeza','2 x 30 s. Suave, ojo con el codo',Y+'overhead+triceps+stretch']],4:[['90/90 sentado','2 x 45 s por lado','https://jackhanrahanfitness.com/learn-the-90-90-stretch-eliminate-tight-hips/'],['Paloma o figura-4','2 x 45 s por lado',Y+'figure+4+stretch+piriformis'],['Mariposa','2 x 60 s',Y+'butterfly+stretch'],['Rotacion interna cadera','2 x 45 s por lado',Y+'hip+internal+rotation+stretch']],5:[['Bisagra de pie, espalda larga','2 x 45 s',Y+'hip+hinge+hamstring+stretch'],['Isquios en escalon','2 x 45 s por pierna',Y+'hamstring+stretch+step'],['Gato-camello','10 ciclos lentos',Y+'cat+camel+exercise'],['Cadena posterior con banda','2 x 45 s por pierna',Y+'supine+hamstring+band+stretch']],6:[['Repaso: una postura de cada dia','8-10 min','']],0:[['Sesion larga: repasa todo','20-25 min, sin prisa','']]};
+var EJ_SES={1:[['Sentadilla trasera','4 x 5, RPE 7-8',Y+'back+squat+tecnica'],['Bulgara con mancuernas','3 x 8 por pierna',Y+'bulgarian+split+squat+tecnica'],['Curl nordico (progresion)','3 x 5, empieza excentrico asistido',Y+'nordic+hamstring+curl+progression'],['Hip thrust','3 x 8',Y+'hip+thrust+tecnica'],['Copenhagen plank','3 x 20 s por lado',Y+'copenhagen+plank+progression'],['Ab wheel o dead bug lastrado','3 x 8',Y+'ab+wheel+rollout'],['Bird dog','3 x 8 por lado, pausa 3 s',Y+'bird+dog+exercise']],3:[['Press banca con mancuernas','4 x 6',Y+'dumbbell+bench+press'],['Dominadas','4 x (maximo menos 2)',Y+'pull+up+tecnica'],['Press militar','3 x 8',Y+'overhead+press+tecnica'],['Remo con barra','3 x 10',Y+'barbell+row+tecnica'],['Face pull','3 x 15',Y+'face+pull+tecnica'],['Curl biceps excentrico','3 x 10, 3 s de bajada, sin estirar del todo',Y+'eccentric+bicep+curl+tempo'],['Pallof press','3 x 10 por lado',Y+'pallof+press+anti+rotation']],5:[['Peso muerto rumano','4 x 6',Y+'romanian+deadlift+tecnica'],['Sentadilla frontal o hack','3 x 8',Y+'front+squat+tecnica'],['Zancadas caminando','3 x 10 por pierna',Y+'walking+lunges+tecnica'],['Elevacion talon pesada de pie','4 x 8','https://www.youtube.com/watch?v=ORY-ke6vcgk'],['Suitcase carry','3 x 30 m por lado',Y+'suitcase+carry'],['Plancha lateral','3 x maximo por lado. Cronometra ambos',Y+'side+plank'],['Extensiones lumbares','3 x 12',Y+'back+extension+roman+chair']],2:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa que marque la cabecera',''],['Maximo 60 min','Y paras si aparece hormigueo o dolor tibial','']],4:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa que marque la cabecera',''],['Maximo 60 min','Y paras si aparece hormigueo o dolor tibial','']],6:[['Calentamiento','12-15 min, progresivo, sin impacto en frio',''],['Volumen de tiro','Segun la etapa que marque la cabecera',''],['Maximo 60 min','Y paras si aparece hormigueo o dolor tibial','']],0:[['Descanso','Sin fuerza ni baloncesto. Solo flexibilidad larga','']]};
+var EJ_PROT=[['Proteina en cada comida','Tamano de tu palma. Es la unica variable que importa',''],['Post-entreno','Platano, yogur griego, batido, fruta con frutos secos',''],['Antes de jugar','Carbohidrato si. No es una concesion, es combustible','']];
+var EJ_SUEN=[['8 horas','Dos noches seguidas bajo 6 h: el dia de fuerza pasa a movilidad',''],['Codo estirado al dormir','Evita dormir con el brazo muy doblado','']];
+var EJ_CREA=[['5 g al dia','Cualquier hora, con agua. Sin fase de carga',''],['Aviso','Subiras 1-2 kg de agua las primeras semanas. No toques nada por eso','']];
+var EJ_AZUC=[['Fuera','Refrescos, bolleria, snacks de bolsa, alcohol',''],['Si cuentan como limpios','Fruta, pan, frutos secos, y carbohidrato peri-entreno',''],['Regla 90/10','Las normas absolutas se rompen enteras el dia que fallas una vez','']];
+var DAILY=[['am','Bloque AM','12 min, movilidad sin impacto'],['pie','Protocolo pie-tibia','9 min, soleo, arco, tibial'],['codo','Bloque codo-hombro','8 min, isometricos, antebrazo'],['flex','Flexibilidad','12 min, noche, nunca antes de fuerza'],['ses','Sesion programada',''],['prot','Proteina en las 3 comidas','Palma de mano por comida'],['crea','Creatina 5 g','Cualquier hora, con agua'],['suen','Sueno 8 h','Es parte del plan, no un extra'],['azuc','Sin ultraprocesados','Fruta y carbo peri-entreno si son limpios']];
 var PAINS=[['tibia','Dolor tibia'],['lumbar','Dolor lumbar'],['codoP','Dolor codo'],['planta','Dolor planta del pie']];
 var METRICS=[['ktw','Knee-to-wall','cm'],['sr','Sit and reach','cm'],['plI','Plancha lateral izq','s'],['plD','Plancha lateral der','s'],['eq','Equilibrio ojos cerrados','s'],['calf','Gemelo 1 pierna','reps'],['salto','Salto vertical','cm'],['sent','Sentadilla 5RM','kg'],['peso','Peso medio semanal','kg']];
-var RULES=[['Regla del dolor',['Durante el ejercicio: hasta 3 sobre 10 es aceptable.','A las 24 h peor que el dia anterior: menos 20% de volumen en la siguiente sesion.','Dolor al caminar por la manana: semana de descarga.']],['Codo - retroceso',['Hormigueo en cualquier momento: bajas una etapa de tiro una semana.','Nunca provoques el chasquido a voluntad.','Fuera: fondos, press cerrado pesado, extensiones en rango final, flexiones con bloqueo, burpees.','Al medico ya si: el codo se bloquea, pierdes extension completa, hinchazon, o el hormigueo pasa a constante.']],['Pliometria - entrada',['Semana 5 como minimo.','4 semanas seguidas con dolor tibial en 2 o menos.','Se cuenta por contactos, no por series. Si ese dia juegas, no hay pliometria.','40, 60, 80, 100 contactos. Dos sesiones por semana.']],['Comer - decisiones rapidas',['Proteina del tamano de tu palma en cada comida. Es la unica variable que importa.','Despues de entrenar: platano, yogur griego, batido, fruta con frutos secos.','Hambre entre horas: huevo cocido, requeson, atun, fruta. Barrita solo si lleva mas proteina que azucar.','Antes de jugar: carbohidrato si. Un platano no es una concesion, es combustible.','Fuera: refrescos, bolleria, snacks de bolsa, alcohol.','Regla 90/10. Las normas absolutas se rompen enteras el dia que fallas una vez.']],['Progresion de cargas',['Sube peso solo cuando completes todas las series limpias con 2 repeticiones en reserva.','Incremento: 2,5 kg en tren superior, 5 kg en tren inferior.','Si el dolor tibial sube, no subes carga esa semana aunque toque.','Primera sesion tras un paron: 60% de lo que crees que puedes.']],['Descarga y sueno',['Semanas 4, 8, 12 y 16: volumen al 60%, intensidad igual.','Domingo sin fuerza ni baloncesto.','Dos noches seguidas bajo 6 h: el dia de fuerza pasa a dia de movilidad.','Creatina 5 g diarios. Subiras 1-2 kg de agua las primeras semanas: no toques nada por eso.']]];
+var RULES=[['Regla del dolor',['Durante el ejercicio: hasta 3 sobre 10 es aceptable.','A las 24 h peor que el dia anterior: menos 20% de volumen en la siguiente sesion.','Dolor al caminar por la manana: semana de descarga.']],['Codo - retroceso',['Hormigueo en cualquier momento: bajas una etapa de tiro una semana.','Nunca provoques el chasquido a voluntad.','Fuera: fondos, press cerrado pesado, extensiones en rango final, flexiones con bloqueo, burpees.','Al medico ya si: el codo se bloquea, pierdes extension completa, hinchazon, o el hormigueo pasa a constante.']],['Pliometria - entrada',['Semana 5 como minimo.','4 semanas seguidas con dolor tibial en 2 o menos.','Se cuenta por contactos, no por series. Si ese dia juegas, no hay pliometria.','40, 60, 80, 100 contactos. Dos sesiones por semana.']],['Progresion de cargas',['Sube peso solo cuando completes todas las series limpias con 2 repeticiones en reserva.','Incremento: 2,5 kg en tren superior, 5 kg en tren inferior.','Si el dolor tibial sube, no subes carga esa semana aunque toque.','Primera sesion tras un paron: 60% de lo que crees que puedes.']],['Descarga y sueno',['Semanas 4, 8, 12 y 16: volumen al 60%, intensidad igual.','Domingo sin fuerza ni baloncesto.','Dos noches seguidas bajo 6 h: el dia de fuerza pasa a dia de movilidad.','Creatina 5 g diarios.']]];
 var ALIAS={'sentadilla frontal':'Sentadilla frontal','sentadilla':'Sentadilla','peso muerto rumano':'Peso muerto rumano','peso muerto':'Peso muerto rumano','rumano':'Peso muerto rumano','rdl':'Peso muerto rumano','frontal':'Sentadilla frontal','bulgara':'Bulgara','bulgaras':'Bulgara','zancada':'Zancadas','zancadas':'Zancadas','hip thrust':'Hip thrust','thrust':'Hip thrust','nordico':'Curl nordico','nordicos':'Curl nordico','gemelo sentado':'Gemelo sentado','soleo':'Gemelo sentado','talon sentado':'Gemelo sentado','gemelo':'Gemelo de pie','talon':'Gemelo de pie','press banca':'Press banca','banca':'Press banca','press militar':'Press militar','militar':'Press militar','dominada':'Dominadas','dominadas':'Dominadas','remo':'Remo','face pull':'Face pull','curl':'Curl biceps','biceps':'Curl biceps','copenhagen':'Copenhagen','ab wheel':'Ab wheel','rueda':'Ab wheel','farmer':'Farmer','muneca':'Flexion de muneca','antebrazo':'Flexion de muneca'};
 function pad(n){return n<10?'0'+n:''+n}
 function iso(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
@@ -106,11 +124,13 @@ function today(){var k=tk();if(!data.days[k])data.days[k]={done:{},pain:{},tingl
 function begin(){data.start=tk();save();draw()}
 function go(t){tab=t;draw();window.scrollTo(0,0)}
 function tog(id){var d=today();d.done[id]=!d.done[id];save();draw()}
+function togG(id){openG[id]=!openG[id];draw()}
 function setPain(id,v){var d=today();d.pain[id]=(d.pain[id]===v)?null:v;save();draw()}
 function tingle(){var d=today();d.tingle=!d.tingle;save();draw()}
 function setM(w,id,v){if(!data.metrics[w])data.metrics[w]={};data.metrics[w][id]=v;save()}
 function exportar(){window.prompt('Copia este texto y guardalo. Es tu copia de seguridad.',JSON.stringify(data))}
 function importar(){var t=window.prompt('Pega aqui tu copia de seguridad:');if(!t)return;try{data=JSON.parse(t);save();draw()}catch(e){alert('No se pudo leer')}}
+function guiaDe(id,dow){if(id==='am')return EJ_AM;if(id==='pie')return EJ_PIE;if(id==='codo')return EJ_CODO;if(id==='flex')return EJ_FLEX[dow]||[];if(id==='ses')return EJ_SES[dow]||[];if(id==='prot')return EJ_PROT;if(id==='crea')return EJ_CREA;if(id==='suen')return EJ_SUEN;if(id==='azuc')return EJ_AZUC;return []}
 function dOff(n){var d=new Date();d.setDate(d.getDate()-n);return data.days[iso(d)]}
 function doneCount(rec){var c=0,j;if(!rec)return 0;for(j=0;j<DAILY.length;j++)if(rec.done[DAILY[j][0]])c++;return c}
 function adher(n){var s=0,t=0,i,lim=Math.min(n,dayNum());for(i=0;i<lim;i++){s+=doneCount(dOff(i));t+=DAILY.length}return t?Math.round(s/t*100):0}
@@ -141,14 +161,14 @@ draw()}
 function ultimo(nom){var ks=[],k,i,j;for(k in data.gym)ks.push(k);ks.sort();
 for(i=ks.length-1;i>=0;i--){var arr=data.gym[ks[i]];for(j=arr.length-1;j>=0;j--)if(arr[j].e===nom&&arr[j].w!=null)return {w:arr[j].w,d:ks[i]}}
 return null}
-function anterior(nom){var ks=[],k,i,j,found=0;for(k in data.gym)ks.push(k);ks.sort();
-for(i=ks.length-1;i>=0;i--){var arr=data.gym[ks[i]];for(j=arr.length-1;j>=0;j--)if(arr[j].e===nom&&arr[j].w!=null){found++;if(found===2)return arr[j].w}}
+function anterior(nom){var ks=[],k,i,j,f=0;for(k in data.gym)ks.push(k);ks.sort();
+for(i=ks.length-1;i>=0;i--){var arr=data.gym[ks[i]];for(j=arr.length-1;j>=0;j--)if(arr[j].e===nom&&arr[j].w!=null){f++;if(f===2)return arr[j].w}}
 return null}
 function mejor(nom){var b=null,k,i;for(k in data.gym)for(i=0;i<data.gym[k].length;i++){var s=data.gym[k][i];if(s.e===nom&&s.w!=null&&(b===null||s.w>b))b=s.w}return b}
 function usados(){var out=[],k,i;for(k in data.gym)for(i=0;i<data.gym[k].length;i++){var e=data.gym[k][i].e;if(out.indexOf(e)<0)out.push(e)}out.sort();return out}
 function totalSeries(){var c=0,k;for(k in data.gym)c+=data.gym[k].length;return c}
 function alerts(){var out=[],d=today(),i,k;
-if(d.tingle)out.push([1,'Hormigueo registrado','Retrocede una etapa de tiro durante una semana. Nada de provocar el chasquido, ni para comprobarlo.']);
+if(d.tingle)out.push([1,'Hormigueo registrado','Retrocede una etapa de tiro durante una semana. Nada de provocar el chasquido.']);
 var ks=[];for(k in data.days)ks.push(k);ks.sort();var l2=[];
 for(i=Math.max(0,ks.length-2);i<ks.length;i++){var p=data.days[ks[i]].pain.tibia;if(p!==null&&p!==undefined)l2.push(p)}
 if(l2.length===2&&l2[0]>3&&l2[1]>3)out.push([1,'Tibia sobre 3 dos dias','Baja el volumen un 20% en la proxima sesion de pierna. No avances de fase aunque toque por calendario.']);
@@ -166,8 +186,11 @@ h+='<div class="nav"><button class="'+(tab==='hoy'?'on':'')+'" onclick="go(\'hoy
 if(tab==='hoy'){var A=alerts();
 for(i=0;i<A.length;i++)h+='<div class="al '+(A[i][0]?'k':'')+'"><b>'+A[i][1]+'</b>'+A[i][2]+'</div>';
 h+='<h2>Bloques del dia &nbsp;&nbsp; '+doneCount(d)+'/'+DAILY.length+'</h2>';
-for(i=0;i<DAILY.length;i++){var id=DAILY[i][0];var lab=(id==='ses')?SES[dow][0]:DAILY[i][1];var det=(id==='ses')?SES[dow][1]:DAILY[i][2];
-h+='<div class="it '+(d.done[id]?'on':'')+'" onclick="tog(\''+id+'\')"><div class="ck">X</div><div class="l">'+lab+'</div>'+(det?'<div class="d">'+det+'</div>':'')+'<div class="cl"></div></div>'}
+for(i=0;i<DAILY.length;i++){var id=DAILY[i][0];var lab=(id==='ses')?SES[dow][0]:DAILY[i][1];var det=DAILY[i][2];
+h+='<div class="it '+(d.done[id]?'on':'')+'" onclick="tog(\''+id+'\')"><span class="gia" onclick="event.stopPropagation();togG(\''+id+'\')">'+(openG[id]?'cerrar':'ver')+'</span><div class="ck">X</div><div class="l">'+lab+'</div>'+(det?'<div class="d">'+det+'</div>':'')+'<div class="cl"></div></div>';
+if(openG[id]){var G=guiaDe(id,dow);h+='<div class="guia">';
+for(j=0;j<G.length;j++){h+='<div class="ex">'+(G[j][2]?'<a href="'+G[j][2]+'" target="_blank" rel="noopener">video</a>':'')+'<div class="n">'+G[j][0]+'</div><div class="s">'+G[j][1]+'</div><div class="cl"></div></div>'}
+h+='</div>'}}
 h+='<h2>Dolor - 0 a 10</h2>';
 for(i=0;i<PAINS.length;i++){var pid=PAINS[i][0],v=d.pain[pid],has=(v!==null&&v!==undefined);
 h+='<div class="pain"><div class="pt"><span class="n">'+PAINS[i][1]+'</span><span class="v">'+(has?v:'-')+'</span></div><div class="sc">';
@@ -187,7 +210,7 @@ h+='<div class="set"><span class="x" onclick="delSet('+i+')">x</span><b>'+s.e+'<
 var us=usados();
 h+='<h2>Progreso de cargas</h2>';
 if(!us.length)h+='<p class="note">Aun no hay historico. En cuanto registres dos sesiones del mismo ejercicio veras la evolucion aqui.</p>';
-else{h+='<table class="tb"><tr><th>Ejercicio</th><th class="r" style="text-align:right">Ultimo</th><th class="r" style="text-align:right">Mejor</th></tr>';
+else{h+='<table class="tb"><tr><th>Ejercicio</th><th style="text-align:right">Ultimo</th><th style="text-align:right">Mejor</th></tr>';
 for(i=0;i<us.length;i++){var u=ultimo(us[i]),a=anterior(us[i]),b=mejor(us[i]);
 var dif='';if(u&&a!=null){var df=Math.round((u.w-a)*10)/10;if(df>0)dif=' <span class="up">+'+df+'</span>';else if(df<0)dif=' <span style="color:#999">'+df+'</span>'}
 h+='<tr><td>'+us[i]+'</td><td class="r">'+(u?u.w+' kg'+dif:'-')+'</td><td class="r">'+(b!=null?b+' kg':'-')+'</td></tr>'}
