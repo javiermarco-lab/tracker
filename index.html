@@ -548,3 +548,77 @@ draw = function(){
 };
 if(typeof S!=='undefined' && S.inicio) draw();
 </script>
+
+<style>
+.login{max-width:380px;margin:0 auto;padding:70px 0;text-align:center}
+.login h1{font-size:20px;font-weight:700;margin:0 0 6px}
+.login p{font-size:13.5px;color:#888;line-height:1.6;margin:0 0 22px}
+.login input{width:100%;border:1px solid #111;padding:14px;font-family:inherit;font-size:16px;text-align:center}
+.login button{width:100%;background:#111;border:1px solid #111;color:#fff;font-size:14px;padding:14px;font-family:inherit;margin-top:8px}
+.login .ok{border:1px solid #111;padding:14px;font-size:13.5px;line-height:1.6;margin-top:16px;text-align:left}
+.salir{width:100%;background:#fff;border:1px solid #ddd;color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:12px;font-family:inherit;margin-top:26px}
+</style>
+<script>
+var TOK=null;
+function leerHash(){
+  var h=window.location.hash;
+  if(h && h.indexOf('access_token')>=0){
+    var p={},partes=h.substring(1).split('&');
+    for(var i=0;i<partes.length;i++){var kv=partes[i].split('=');p[kv[0]]=decodeURIComponent(kv[1]||'')}
+    if(p.access_token){
+      try{localStorage.setItem('tok',p.access_token);localStorage.setItem('tok_exp',String(Date.now()+(parseInt(p.expires_in||'3600')*1000)))}catch(e){}
+      history.replaceState(null,'',window.location.pathname);
+      return p.access_token;
+    }
+  }
+  try{
+    var t=localStorage.getItem('tok'),e=parseInt(localStorage.getItem('tok_exp')||'0');
+    if(t && e>Date.now()) return t;
+  }catch(e){}
+  return null;
+}
+function salir(){try{localStorage.removeItem('tok');localStorage.removeItem('tok_exp')}catch(e){}location.reload()}
+function enviarEnlace(){
+  var em=document.getElementById('log_em').value.trim();
+  if(!em||em.indexOf('@')<0){alert('Escribe tu correo');return}
+  var b=document.getElementById('log_bt');b.textContent='Enviando...';b.disabled=true;
+  fetch('https://wsqjswbcgrbtlemqgejg.supabase.co/auth/v1/otp',{
+    method:'POST',
+    headers:{'apikey':KEY_DB,'Content-Type':'application/json'},
+    body:JSON.stringify({email:em,create_user:true,options:{email_redirect_to:'https://javiermarco-lab.github.io/tracker/'}})
+  }).then(function(r){return r.text()}).then(function(){
+    document.getElementById('log_msg').innerHTML='<div class="ok"><b>Enlace enviado a '+em+'</b><br>Abre el correo desde este mismo dispositivo y pulsa el enlace. Si no lo ves, mira en spam.</div>';
+    b.textContent='Reenviar enlace';b.disabled=false;
+  })['catch'](function(){b.textContent='Error, reintentar';b.disabled=false});
+}
+function pantallaLogin(){
+  document.getElementById('sync').innerHTML='';
+  document.getElementById('root').innerHTML='<div class="login"><h1>Panel personal</h1><p>Entra con tu correo. Te llega un enlace y no hace falta contrasena.</p><input id="log_em" type="email" inputmode="email" autocomplete="email" placeholder="tu@correo.com"><button id="log_bt" onclick="enviarEnlace()">Enviarme el enlace</button><div id="log_msg"></div></div>';
+}
+var _apiOrig = api;
+api = function(metodo,ruta,cuerpo){
+  var o={method:metodo,headers:{'apikey':KEY_DB,'Authorization':'Bearer '+(TOK||KEY_DB),'Content-Type':'application/json','Prefer':metodo==='POST'?'return=representation':'resolution=merge-duplicates,return=representation'}};
+  if(cuerpo)o.body=JSON.stringify(cuerpo);
+  return fetch(URL_DB+ruta,o).then(function(r){
+    if(r.status===401||r.status===403){salir();throw new Error('sesion caducada')}
+    if(!r.ok)return r.text().then(function(t){throw new Error(t)});
+    return r.status===204?null:r.json()})
+};
+var _drawConHoja = draw;
+draw = function(){
+  _drawConHoja();
+  if(TOK && tab==='dash'){
+    document.getElementById('root').insertAdjacentHTML('beforeend','<button class="salir" onclick="salir()">Cerrar sesion</button>');
+  }
+};
+function arrancar(){
+  TOK = leerHash();
+  if(!TOK){ pantallaLogin(); return; }
+  estado('Cargando datos');
+  cargar().then(function(){estado('');draw()})['catch'](function(e){
+    console.error(e);
+    if(String(e.message).indexOf('sesion')<0){estado('No se pudo conectar',1)}
+  });
+}
+setTimeout(arrancar, 400);
+</script>
