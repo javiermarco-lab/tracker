@@ -472,3 +472,79 @@ cargar().then(function(){estado('');draw()})['catch'](function(e){estado('No se 
   .it{padding:13px 12px}
 }
 </style>
+
+<style>
+.hoja{width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+.hoja th{text-align:left;font-size:9px;letter-spacing:1.2px;text-transform:uppercase;color:#999;font-weight:600;padding:8px 6px;border-bottom:1px solid #111;white-space:nowrap}
+.hoja td{padding:9px 6px;border-bottom:1px solid #eee;vertical-align:middle}
+.hoja td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.hoja tr.tot td{border-top:2px solid #111;border-bottom:none;font-weight:800;padding-top:11px}
+.hoja .cat{font-size:11px;color:#999}
+.hoja .del{color:#ccc;cursor:pointer;padding:0 4px}
+.alta{border:1px solid #111;padding:12px;margin-top:10px}
+.alta .fila{display:flex;gap:6px;margin-bottom:6px}
+.alta input,.alta select{flex:1;min-width:0;border:1px solid #ddd;padding:9px;font-family:inherit;font-size:14px;background:#fff;color:#111}
+.alta input.imp{max-width:110px;text-align:right}
+.alta .tp{display:flex;gap:6px;margin-bottom:6px}
+.alta .tp button{flex:1;border:1px solid #ddd;background:#fff;color:#666;font-family:inherit;font-size:13px;padding:10px}
+.alta .tp button.on{border-color:#111;background:#111;color:#fff;font-weight:700}
+.mesnav{display:flex;gap:6px;margin-bottom:10px}
+.mesnav button{flex:1;border:1px solid #ddd;background:#fff;color:#888;font-family:inherit;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:9px}
+.mesnav button.on{border-color:#111;background:#111;color:#fff}
+@media (min-width:900px){ .hoja{font-size:14px} .hoja td{padding:11px 8px} }
+</style>
+<script>
+var vistaMes=0, altaTipo='gasto';
+function mesDesplazado(n){var d=new Date();d.setDate(1);d.setMonth(d.getMonth()-n);return d.getFullYear()+'-'+pad(d.getMonth()+1)}
+function setMes(n){vistaMes=n;draw()}
+function setAltaTipo(t){altaTipo=t;draw()}
+function altaManual(){
+var c=document.getElementById('a_con').value.trim();
+var im=document.getElementById('a_imp').value;
+var ca=document.getElementById('a_cat').value;
+var fe=document.getElementById('a_fec').value||tk();
+if(!im){alert('Falta el importe');return}
+var fila={fecha:fe,tipo:altaTipo,categoria:altaTipo==='ingreso'?'ingreso':ca,concepto:c||ca,importe:parseFloat(String(im).split(',').join('.')),fijo:false};
+estado('Guardando');
+api('POST','finanzas',[fila]).then(function(r){S.fin=r.concat(S.fin);estado('Guardado');draw()})['catch'](function(e){estado('Error al guardar',1)})}
+function hojaHTML(){
+var mes=mesDesplazado(vistaMes),i,h='';
+var filas=S.fin.filter(function(f){return f.fecha.slice(0,7)===mes});
+filas.sort(function(a,b){return a.fecha<b.fecha?1:-1});
+var ti=0,tg=0;
+h+='<h2>Hoja de movimientos</h2>';
+h+='<div class="mesnav">';
+for(i=0;i<3;i++)h+='<button class="'+(vistaMes===i?'on':'')+'" onclick="setMes('+i+')">'+mesDesplazado(i)+'</button>';
+h+='</div>';
+h+='<table class="hoja"><tr><th>Fecha</th><th>Concepto</th><th style="text-align:right">Ingreso</th><th style="text-align:right">Gasto</th><th></th></tr>';
+for(i=0;i<filas.length;i++){var f=filas[i],im=parseFloat(f.importe);
+if(f.tipo==='ingreso')ti+=im;else tg+=im;
+h+='<tr><td style="white-space:nowrap;color:#999;font-size:12px">'+f.fecha.slice(8)+'/'+f.fecha.slice(5,7)+'</td>'
++'<td>'+f.concepto+'<div class="cat">'+f.categoria+(f.fijo?' · fijo':'')+'</div></td>'
++'<td class="n">'+(f.tipo==='ingreso'?im.toFixed(2):'')+'</td>'
++'<td class="n">'+(f.tipo==='gasto'?im.toFixed(2):'')+'</td>'
++'<td class="n"><span class="del" onclick="borrarFin('+f.id+')">x</span></td></tr>'}
+if(!filas.length)h+='<tr><td colspan="5" style="color:#999;font-size:12px;padding:16px 6px">Sin movimientos este mes.</td></tr>';
+h+='<tr class="tot"><td></td><td>Total</td><td class="n">'+ti.toFixed(2)+'</td><td class="n">'+tg.toFixed(2)+'</td><td></td></tr>';
+h+='<tr class="tot" style="border-top:none"><td></td><td>Neto</td><td class="n" colspan="2">'+(ti-tg).toFixed(2)+'</td><td></td></tr>';
+h+='</table>';
+h+='<div class="alta"><div class="tp"><button class="'+(altaTipo==='gasto'?'on':'')+'" onclick="setAltaTipo(\'gasto\')">Gasto</button><button class="'+(altaTipo==='ingreso'?'on':'')+'" onclick="setAltaTipo(\'ingreso\')">Ingreso</button></div>';
+h+='<div class="fila"><input id="a_fec" type="date" value="'+tk()+'"><input id="a_imp" class="imp" type="number" step="0.01" inputmode="decimal" placeholder="0,00"></div>';
+h+='<div class="fila"><input id="a_con" type="text" placeholder="Concepto"><select id="a_cat">';
+for(i=0;i<CATS.length;i++)h+='<option value="'+CATS[i]+'">'+CATS[i]+'</option>';
+h+='</select></div><button class="gbtn" style="margin-top:2px" onclick="altaManual()">Anadir a la hoja</button></div>';
+return h}
+var _drawOrig = draw;
+draw = function(){
+  _drawOrig();
+  if(tab==='din'){
+    var r=document.getElementById('root');
+    var movs=r.querySelectorAll('.mov');
+    for(var i=0;i<movs.length;i++)movs[i].style.display='none';
+    var h2s=r.querySelectorAll('h2');
+    for(var j=0;j<h2s.length;j++)if(h2s[j].textContent.indexOf('Movimientos')>=0)h2s[j].style.display='none';
+    r.insertAdjacentHTML('beforeend', hojaHTML());
+  }
+};
+if(typeof S!=='undefined' && S.inicio) draw();
+</script>
